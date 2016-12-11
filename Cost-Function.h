@@ -8,7 +8,6 @@
 
 using namespace std;
 
-//const int NumOfNodes = 5;
 
 //global variables
 int lines; //first line of telling how many nodes are in text 
