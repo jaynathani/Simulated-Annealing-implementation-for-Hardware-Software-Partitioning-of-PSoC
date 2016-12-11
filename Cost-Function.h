@@ -77,7 +77,7 @@ void displayOutput(int lines)
 		cout<<"\n\n";
 	}
 }
-/*
+
 int CalculateCostFunct(int lines)
 {
 	int Q1 = 1, Q2 = 2, Q3 = 3;
@@ -85,7 +85,7 @@ int CalculateCostFunct(int lines)
 	int wd_flash = 1, ci_flash = 1;
 	int k = 0, j = 0;
 	int total_mac = 0, total_flash = 0;
-	int cost_val = 0;
+	int cost = 0;
 	for (k = 0; k < lines; k++) {
 		total_mac += wd_mac * ci_mac;
 		//cout << total_mac << endl; //debug
@@ -97,11 +97,11 @@ int CalculateCostFunct(int lines)
 	}
 
 	cost = (Q1 * total_mac) + (Q1 * total_flash);
-	cout << "COST:" << cost << endl; //debug
+	cout << " COST:" << cost << "\n\n"; //debug
 									 //cost = total_mac;
 
-	return cost_val;
+	return cost;
 	
 }
 
-*/
+
