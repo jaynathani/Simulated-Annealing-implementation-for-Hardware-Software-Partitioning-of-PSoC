@@ -8,8 +8,8 @@ int main()
 {
 
 	GetData();
-//	displayOutput(lines);
-//	CalculateCostFunct(lines);
+//	displayOutput(lines); //Debug
+//	CalculateCostFunct(lines); //Debug
 	SA_Algorithm();
 	
 	return 0;
