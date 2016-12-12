@@ -143,7 +143,7 @@ int CalculateCostFunct(int lines)
     //cost = /*(Q1 * total_mac) + (Q1 * total_flash) */- (Q3 * (CL_Hardware_sum - CL_Software_sum));//debug
     cost = (Q1 * total_mac) + (Q1 * total_flash) - (Q3 * (CL_Hardware_sum - CL_Software_sum));
 
-    cout << " COST:" << cost << "\n\n"; //debug
+//    cout <<endl<< "COST:" << cost; //debug
                                         //cost = total_mac;
 
     return cost;
