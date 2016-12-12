@@ -17,15 +17,6 @@ int curr_cost, new_cost, cost_difference, best_cost, worst_cost=0;
 	
 void SA_Algorithm()
 {
-	for(int i=0;i<software_nodes.size();i++)		//Printing out
-	{
-		cout<<"Software node: "<<software_nodes[i]<<endl;
-	}
-	for(int i=0;i<hardware_nodes.size();i++)
-	{
-		cout<<"Hardware node: "<<hardware_nodes[i]<<endl;
-	}
-	cout<<endl;
 	float t=ti;
 	vector<int>::iterator it;
 	curr_cost = CalculateCostFunct(lines);
@@ -37,7 +28,7 @@ void SA_Algorithm()
 	while(t>tl)		
 	{
 		random_number = rand() % lines;		//Inner step in 3.1.1
-//		cout<<"\n\n"<<random_number<<"\n\n";
+		
 		it = find(software_nodes.begin(), software_nodes.end(), random_number);
 		if(it == software_nodes.end())		//if random number is not in software_nodes because it = software.end()
 		{
@@ -52,10 +43,21 @@ void SA_Algorithm()
 		}
 		
 		new_cost = CalculateCostFunct(lines);
-		//cout<<"New cost: "<<new_cost<<"\n\n";
+		//cout<<"New cost: "<<new_cost<<"\n\n"; //Debug
 		cost_difference = new_cost - curr_cost;		//Inner step 3.1.2
 		if(new_cost < best_cost)
-			best_cost = new_cost;	
+			{
+				best_cost = new_cost;
+				best_software_nodes.clear();
+				for(int k=0;k<software_nodes.size();k++)
+					best_software_nodes.push_back(software_nodes[k]);
+					
+				best_hardware_nodes.clear();
+				for(int a=0;a<hardware_nodes.size();a++)
+					best_hardware_nodes.push_back(hardware_nodes[a]);
+				
+			}
+			
 		
 		if(new_cost > worst_cost)
 			worst_cost = new_cost;
@@ -80,7 +82,10 @@ void SA_Algorithm()
 		}
 		else
 			curr_cost = new_cost;
-		for(int i=0;i<software_nodes.size();i++)		//Printing out
+		
+		//Print out every iteration of Hardware-Software vectors
+	//	cout<<"\n\nNode change: "<<random_number<<"\n\n"; 
+/*		for(int i=0;i<software_nodes.size();i++)		//Printing out
 		{
 			cout<<"Software node: "<<software_nodes[i]<<endl;
 		}	
@@ -88,11 +93,19 @@ void SA_Algorithm()
 		for(int i=0;i<hardware_nodes.size();i++)
 		{
 			cout<<"Hardware node: "<<hardware_nodes[i]<<endl;
-		}
+		}*/
 		t = alpha * t;		//Step 3.2
-	//	if(stopping_criteria_count == 3 && 		//Step 4 left to code
 		
 	}
 	cout<<endl<<"Best cost: "<<best_cost<<endl;
+	for(int i=0;i<best_software_nodes.size();i++)		//Printing out
+		{
+			cout<<"Software node: "<<best_software_nodes[i]<<endl;
+		}	
+		cout<<endl;
+		for(int i=0;i<best_hardware_nodes.size();i++)
+		{
+			cout<<"Hardware node: "<<best_hardware_nodes[i]<<endl;
+		}
 	cout<<endl<<"Worst cost: "<<worst_cost<<endl;
 }
