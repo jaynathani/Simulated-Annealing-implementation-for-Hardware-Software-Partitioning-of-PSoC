@@ -91,9 +91,9 @@ void displayOutput(int lines)
 
 int CalculateCostFunct(int lines)
 {
-    int Q1 = 1, Q2 = 1, Q3 = 1;
-    int wd_mac = 1, ci_mac = 1;
-    int wd_flash = 1, ci_flash = 1, flash_lim = 1;
+    float Q1 = 0.1, Q2 = 0.1, Q3 = 1;
+    int wd_mac = 8, ci_mac = 4;
+    int wd_flash = 512, ci_flash = 1, flash_lim = 1;
     int k = 0, j = 0, l = 0, m=0, n=0;
     int total_mac = 0, total_flash = 0;
     int cost = 0;
