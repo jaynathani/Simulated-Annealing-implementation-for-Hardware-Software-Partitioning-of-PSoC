@@ -1,0 +1,2682 @@
+*NODE:1:SW
+	0827: 10       PUSH  X
+    0828: 4F       MOV   X,SP
+    0829: 38 4A    ADD   SP,0x4A
+*NODE:2:SW
+	082B: 56 1C 00 MOV   [X+28],0x0
+    082E: 56 1D 00 MOV   [X+29],0x0
+    0831: 56 1E 00 MOV   [X+30],0x0
+    0834: 56 1F 01 MOV   [X+31],0x1
+*NODE:3:SW
+	0837: 56 00 00 MOV   [X+0],0x0
+    083A: 56 01 00 MOV   [X+1],0x0
+    083D: 56 02 00 MOV   [X+2],0x0
+    0840: 56 03 00 MOV   [X+3],0x0
+    0843: 80 15    JMP   0x0859
+*NODE:4:SW
+	0845: 66 1F    ASL   [X+31]
+    0847: 6C 1E    RLC   [X+30]
+    0849: 6C 1D    RLC   [X+29]
+    084B: 6C 1C    RLC   [X+28]
+*NODE:5:SW
+	084D: 07 03 01 ADD   [X+3],0x1
+    0850: 0F 02 00 ADC   [X+2],0x0
+    0853: 0F 01 00 ADC   [X+1],0x0
+    0856: 0F 00 00 ADC   [X+0],0x0
+*NODE:6:SW
+	0859: 52 03    MOV   A,[X+3]
+    085B: 13 FA    SUB   A,[X-6]
+    085D: 52 02    MOV   A,[X+2]
+    085F: 1B F9    SBB   A,[X-7]
+    0861: 52 01    MOV   A,[X+1]
+    0863: 1B F8    SBB   A,[X-8]
+    0865: 52 F7    MOV   A,[X-9]
+    0867: 31 80    XOR   A,0x80
+    0869: 62 D0 00 MOV   REG[0xD0],0x0
+    086C: 53 E5    MOV   [__rX],A
+    086E: 52 00    MOV   A,[X+0]
+    0870: 31 80    XOR   A,0x80
+    0872: 1A E5    SBB   A,[__rX]
+    0874: CF D0    JC    0x0845
+*NODE:7:SW
+	0876: 62 D0 00 MOV   REG[0xD0],0x0
+    0879: 52 1C    MOV   A,[X+28]
+    087B: 53 F1    MOV   [__r0],A
+    087D: 52 1D    MOV   A,[X+29]
+    087F: 53 F0    MOV   [__r1],A
+    0881: 52 1E    MOV   A,[X+30]
+    0883: 53 EF    MOV   [__r2],A
+    0885: 52 1F    MOV   A,[X+31]
+    0887: 53 EE    MOV   [__r3],A
+    0889: 68 F1    ASR   [__r0]
+    088B: 6E F0    RRC   [__r1]
+    088D: 6E EF    RRC   [__r2]
+    088F: 6E EE    RRC   [__r3]
+    0891: 51 F1    MOV   A,[__r0]
+    0893: 54 3C    MOV   [X+60],A
+    0895: 51 F0    MOV   A,[__r1]
+    0897: 54 3D    MOV   [X+61],A
+    0899: 51 EF    MOV   A,[__r2]
+    089B: 54 3E    MOV   [X+62],A
+    089D: 51 EE    MOV   A,[__r3]
+    089F: 54 3F    MOV   [X+63],A
+*NODE:8:SW
+	08A1: 56 24 00 MOV   [X+36],0x0
+    08A4: 56 25 00 MOV   [X+37],0x0
+    08A7: 56 26 00 MOV   [X+38],0x0
+    08AA: 56 27 00 MOV   [X+39],0x0
+*NODE:9:SW
+	08AD: 56 00 00 MOV   [X+0],0x0
+    08B0: 56 01 00 MOV   [X+1],0x0
+    08B3: 56 02 00 MOV   [X+2],0x0
+    08B6: 56 03 00 MOV   [X+3],0x0
+    08B9: 82 A4    JMP   0x0B5E
+*NODE:10:SW
+	08BB: 52 03    MOV   A,[X+3]
+    08BD: 13 27    SUB   A,[X+39]
+    08BF: 52 02    MOV   A,[X+2]
+    08C1: 1B 26    SBB   A,[X+38]
+    08C3: 52 01    MOV   A,[X+1]
+    08C5: 1B 25    SBB   A,[X+37]
+    08C7: 52 24    MOV   A,[X+36]
+    08C9: 31 80    XOR   A,0x80
+    08CB: 62 D0 00 MOV   REG[0xD0],0x0
+    08CE: 53 E5    MOV   [__rX],A
+    08D0: 52 00    MOV   A,[X+0]
+    08D2: 31 80    XOR   A,0x80
+    08D4: 1A E5    SBB   A,[__rX]
+    08D6: D2 24    JNC   0x0AFB
+*NODE:11:SW
+	08D8: 62 D0 00 MOV   REG[0xD0],0x0
+    08DB: 52 00    MOV   A,[X+0]
+    08DD: 53 F1    MOV   [__r0],A
+    08DF: 52 01    MOV   A,[X+1]
+    08E1: 53 F0    MOV   [__r1],A
+    08E3: 52 02    MOV   A,[X+2]
+    08E5: 53 EF    MOV   [__r2],A
+    08E7: 52 03    MOV   A,[X+3]
+    08E9: 53 EE    MOV   [__r3],A
+    08EB: 50 02    MOV   A,0x2
+    08ED: 62 D0 00 MOV   REG[0xD0],0x0
+    08F0: 65 EE    ASL   [__r3]
+    08F2: 6B EF    RLC   [__r2]
+    08F4: 6B F0    RLC   [__r1]
+    08F6: 6B F1    RLC   [__r0]
+    08F8: 78       DEC   A
+    08F9: BF F3    JNZ   0x08ED
+    08FB: 51 EE    MOV   A,[__r3]
+    08FD: 53 F0    MOV   [__r1],A
+    08FF: 51 EF    MOV   A,[__r2]
+    0901: 53 F1    MOV   [__r0],A
+    0903: 52 F6    MOV   A,[X-10]
+    0905: 04 F0    ADD   [__r1],A
+    0907: 52 F5    MOV   A,[X-11]
+    0909: 0C F1    ADC   [__r0],A
+    090B: 51 F1    MOV   A,[__r0]
+    090D: 60 D4    MOV   REG[0xD4],A
+    090F: 3E F0    MVI   A,[__r1]
+    0911: 54 40    MOV   [X+64],A
+    0913: 3E F0    MVI   A,[__r1]
+    0915: 54 41    MOV   [X+65],A
+    0917: 3E F0    MVI   A,[__r1]
+    0919: 54 42    MOV   [X+66],A
+    091B: 3E F0    MVI   A,[__r1]
+    091D: 54 43    MOV   [X+67],A
+*NODE:12:SW
+	091F: 52 00    MOV   A,[X+0]
+    0921: 53 F1    MOV   [__r0],A
+    0923: 52 01    MOV   A,[X+1]
+    0925: 53 F0    MOV   [__r1],A
+    0927: 52 02    MOV   A,[X+2]
+    0929: 53 EF    MOV   [__r2],A
+    092B: 52 03    MOV   A,[X+3]
+    092D: 53 EE    MOV   [__r3],A
+    092F: 50 02    MOV   A,0x2
+    0931: 62 D0 00 MOV   REG[0xD0],0x0
+    0934: 65 EE    ASL   [__r3]
+    0936: 6B EF    RLC   [__r2]
+    0938: 6B F0    RLC   [__r1]
+    093A: 6B F1    RLC   [__r0]
+    093C: 78       DEC   A
+    093D: BF F3    JNZ   0x0931
+    093F: 51 EE    MOV   A,[__r3]
+    0941: 53 F0    MOV   [__r1],A
+    0943: 51 EF    MOV   A,[__r2]
+    0945: 53 F1    MOV   [__r0],A
+    0947: 52 F4    MOV   A,[X-12]
+    0949: 04 F0    ADD   [__r1],A
+    094B: 52 F3    MOV   A,[X-13]
+    094D: 0C F1    ADC   [__r0],A
+    094F: 51 F1    MOV   A,[__r0]
+    0951: 60 D4    MOV   REG[0xD4],A
+    0953: 3E F0    MVI   A,[__r1]
+    0955: 54 44    MOV   [X+68],A
+    0957: 3E F0    MVI   A,[__r1]
+    0959: 54 45    MOV   [X+69],A
+    095B: 3E F0    MVI   A,[__r1]
+    095D: 54 46    MOV   [X+70],A
+    095F: 3E F0    MVI   A,[__r1]
+    0961: 54 47    MOV   [X+71],A
+*NODE:13:SW
+	0963: 52 24    MOV   A,[X+36]
+    0965: 53 F1    MOV   [__r0],A
+    0967: 52 25    MOV   A,[X+37]
+    0969: 53 F0    MOV   [__r1],A
+    096B: 52 26    MOV   A,[X+38]
+    096D: 53 EF    MOV   [__r2],A
+    096F: 52 27    MOV   A,[X+39]
+    0971: 53 EE    MOV   [__r3],A
+    0973: 50 02    MOV   A,0x2
+    0975: 62 D0 00 MOV   REG[0xD0],0x0
+    0978: 65 EE    ASL   [__r3]
+    097A: 6B EF    RLC   [__r2]
+    097C: 6B F0    RLC   [__r1]
+    097E: 6B F1    RLC   [__r0]
+    0980: 78       DEC   A
+    0981: BF F3    JNZ   0x0975
+    0983: 51 EE    MOV   A,[__r3]
+    0985: 53 F0    MOV   [__r1],A
+    0987: 51 EF    MOV   A,[__r2]
+    0989: 53 F1    MOV   [__r0],A
+    098B: 52 F6    MOV   A,[X-10]
+    098D: 04 F0    ADD   [__r1],A
+    098F: 52 F5    MOV   A,[X-11]
+    0991: 0C F1    ADC   [__r0],A
+    0993: 51 F1    MOV   A,[__r0]
+    0995: 60 D4    MOV   REG[0xD4],A
+    0997: 3E F0    MVI   A,[__r1]
+    0999: 53 ED    MOV   [__r4],A
+    099B: 3E F0    MVI   A,[__r1]
+    099D: 53 EC    MOV   [__r5],A
+    099F: 3E F0    MVI   A,[__r1]
+    09A1: 53 EB    MOV   [__r6],A
+    09A3: 3E F0    MVI   A,[__r1]
+    09A5: 53 EA    MOV   [__r7],A
+    09A7: 52 00    MOV   A,[X+0]
+    09A9: 53 F1    MOV   [__r0],A
+    09AB: 52 01    MOV   A,[X+1]
+    09AD: 53 F0    MOV   [__r1],A
+    09AF: 52 02    MOV   A,[X+2]
+    09B1: 53 EF    MOV   [__r2],A
+    09B3: 52 03    MOV   A,[X+3]
+    09B5: 53 EE    MOV   [__r3],A
+    09B7: 50 02    MOV   A,0x2
+    09B9: 62 D0 00 MOV   REG[0xD0],0x0
+    09BC: 65 EE    ASL   [__r3]
+    09BE: 6B EF    RLC   [__r2]
+    09C0: 6B F0    RLC   [__r1]
+    09C2: 6B F1    RLC   [__r0]
+    09C4: 78       DEC   A
+    09C5: BF F3    JNZ   0x09B9
+    09C7: 51 EE    MOV   A,[__r3]
+    09C9: 53 F0    MOV   [__r1],A
+    09CB: 51 EF    MOV   A,[__r2]
+    09CD: 53 F1    MOV   [__r0],A
+    09CF: 52 F6    MOV   A,[X-10]
+    09D1: 04 F0    ADD   [__r1],A
+    09D3: 52 F5    MOV   A,[X-11]
+    09D5: 0C F1    ADC   [__r0],A
+    09D7: 51 F1    MOV   A,[__r0]
+    09D9: 60 D5    MOV   REG[0xD5],A
+    09DB: 51 ED    MOV   A,[__r4]
+    09DD: 3F F0    MVI   [__r1],A
+    09DF: 51 EC    MOV   A,[__r5]
+    09E1: 3F F0    MVI   [__r1],A
+    09E3: 51 EB    MOV   A,[__r6]
+    09E5: 3F F0    MVI   [__r1],A
+    09E7: 51 EA    MOV   A,[__r7]
+    09E9: 3F F0    MVI   [__r1],A
+*NODE:14:SW
+	09EB: 52 24    MOV   A,[X+36]
+    09ED: 53 F1    MOV   [__r0],A
+    09EF: 52 25    MOV   A,[X+37]
+    09F1: 53 F0    MOV   [__r1],A
+    09F3: 52 26    MOV   A,[X+38]
+    09F5: 53 EF    MOV   [__r2],A
+    09F7: 52 27    MOV   A,[X+39]
+    09F9: 53 EE    MOV   [__r3],A
+    09FB: 50 02    MOV   A,0x2
+    09FD: 62 D0 00 MOV   REG[0xD0],0x0
+    0A00: 65 EE    ASL   [__r3]
+    0A02: 6B EF    RLC   [__r2]
+    0A04: 6B F0    RLC   [__r1]
+    0A06: 6B F1    RLC   [__r0]
+    0A08: 78       DEC   A
+    0A09: BF F3    JNZ   0x09FD
+    0A0B: 51 EE    MOV   A,[__r3]
+    0A0D: 53 F0    MOV   [__r1],A
+    0A0F: 51 EF    MOV   A,[__r2]
+    0A11: 53 F1    MOV   [__r0],A
+    0A13: 52 F4    MOV   A,[X-12]
+    0A15: 04 F0    ADD   [__r1],A
+    0A17: 52 F3    MOV   A,[X-13]
+    0A19: 0C F1    ADC   [__r0],A
+    0A1B: 51 F1    MOV   A,[__r0]
+    0A1D: 60 D4    MOV   REG[0xD4],A
+    0A1F: 3E F0    MVI   A,[__r1]
+    0A21: 53 ED    MOV   [__r4],A
+    0A23: 3E F0    MVI   A,[__r1]
+    0A25: 53 EC    MOV   [__r5],A
+    0A27: 3E F0    MVI   A,[__r1]
+    0A29: 53 EB    MOV   [__r6],A
+    0A2B: 3E F0    MVI   A,[__r1]
+    0A2D: 53 EA    MOV   [__r7],A
+    0A2F: 52 00    MOV   A,[X+0]
+    0A31: 53 F1    MOV   [__r0],A
+    0A33: 52 01    MOV   A,[X+1]
+    0A35: 53 F0    MOV   [__r1],A
+    0A37: 52 02    MOV   A,[X+2]
+    0A39: 53 EF    MOV   [__r2],A
+    0A3B: 52 03    MOV   A,[X+3]
+    0A3D: 53 EE    MOV   [__r3],A
+    0A3F: 50 02    MOV   A,0x2
+    0A41: 62 D0 00 MOV   REG[0xD0],0x0
+    0A44: 65 EE    ASL   [__r3]
+    0A46: 6B EF    RLC   [__r2]
+    0A48: 6B F0    RLC   [__r1]
+    0A4A: 6B F1    RLC   [__r0]
+    0A4C: 78       DEC   A
+    0A4D: BF F3    JNZ   0x0A41
+    0A4F: 51 EE    MOV   A,[__r3]
+    0A51: 53 F0    MOV   [__r1],A
+    0A53: 51 EF    MOV   A,[__r2]
+    0A55: 53 F1    MOV   [__r0],A
+    0A57: 52 F4    MOV   A,[X-12]
+    0A59: 04 F0    ADD   [__r1],A
+    0A5B: 52 F3    MOV   A,[X-13]
+    0A5D: 0C F1    ADC   [__r0],A
+    0A5F: 51 F1    MOV   A,[__r0]
+    0A61: 60 D5    MOV   REG[0xD5],A
+    0A63: 51 ED    MOV   A,[__r4]
+    0A65: 3F F0    MVI   [__r1],A
+    0A67: 51 EC    MOV   A,[__r5]
+    0A69: 3F F0    MVI   [__r1],A
+    0A6B: 51 EB    MOV   A,[__r6]
+    0A6D: 3F F0    MVI   [__r1],A
+    0A6F: 51 EA    MOV   A,[__r7]
+    0A71: 3F F0    MVI   [__r1],A
+*NODE:15:SW
+	0A73: 52 24    MOV   A,[X+36]
+    0A75: 53 F1    MOV   [__r0],A
+    0A77: 52 25    MOV   A,[X+37]
+    0A79: 53 F0    MOV   [__r1],A
+    0A7B: 52 26    MOV   A,[X+38]
+    0A7D: 53 EF    MOV   [__r2],A
+    0A7F: 52 27    MOV   A,[X+39]
+    0A81: 53 EE    MOV   [__r3],A
+    0A83: 50 02    MOV   A,0x2
+    0A85: 62 D0 00 MOV   REG[0xD0],0x0
+    0A88: 65 EE    ASL   [__r3]
+    0A8A: 6B EF    RLC   [__r2]
+    0A8C: 6B F0    RLC   [__r1]
+    0A8E: 6B F1    RLC   [__r0]
+    0A90: 78       DEC   A
+    0A91: BF F3    JNZ   0x0A85
+    0A93: 51 EE    MOV   A,[__r3]
+    0A95: 53 F0    MOV   [__r1],A
+    0A97: 51 EF    MOV   A,[__r2]
+    0A99: 53 F1    MOV   [__r0],A
+    0A9B: 52 F6    MOV   A,[X-10]
+    0A9D: 04 F0    ADD   [__r1],A
+    0A9F: 52 F5    MOV   A,[X-11]
+    0AA1: 0C F1    ADC   [__r0],A
+    0AA3: 51 F1    MOV   A,[__r0]
+    0AA5: 60 D5    MOV   REG[0xD5],A
+    0AA7: 52 40    MOV   A,[X+64]
+    0AA9: 3F F0    MVI   [__r1],A
+    0AAB: 52 41    MOV   A,[X+65]
+    0AAD: 3F F0    MVI   [__r1],A
+    0AAF: 52 42    MOV   A,[X+66]
+    0AB1: 3F F0    MVI   [__r1],A
+    0AB3: 52 43    MOV   A,[X+67]
+    0AB5: 3F F0    MVI   [__r1],A
+*NODE:16:SW
+	0AB7: 52 24    MOV   A,[X+36]
+    0AB9: 53 F1    MOV   [__r0],A
+    0ABB: 52 25    MOV   A,[X+37]
+    0ABD: 53 F0    MOV   [__r1],A
+    0ABF: 52 26    MOV   A,[X+38]
+    0AC1: 53 EF    MOV   [__r2],A
+    0AC3: 52 27    MOV   A,[X+39]
+    0AC5: 53 EE    MOV   [__r3],A
+    0AC7: 50 02    MOV   A,0x2
+    0AC9: 62 D0 00 MOV   REG[0xD0],0x0
+    0ACC: 65 EE    ASL   [__r3]
+    0ACE: 6B EF    RLC   [__r2]
+    0AD0: 6B F0    RLC   [__r1]
+    0AD2: 6B F1    RLC   [__r0]
+    0AD4: 78       DEC   A
+    0AD5: BF F3    JNZ   0x0AC9
+    0AD7: 51 EE    MOV   A,[__r3]
+    0AD9: 53 F0    MOV   [__r1],A
+    0ADB: 51 EF    MOV   A,[__r2]
+    0ADD: 53 F1    MOV   [__r0],A
+    0ADF: 52 F4    MOV   A,[X-12]
+    0AE1: 04 F0    ADD   [__r1],A
+    0AE3: 52 F3    MOV   A,[X-13]
+    0AE5: 0C F1    ADC   [__r0],A
+    0AE7: 51 F1    MOV   A,[__r0]
+    0AE9: 60 D5    MOV   REG[0xD5],A
+    0AEB: 52 44    MOV   A,[X+68]
+    0AED: 3F F0    MVI   [__r1],A
+    0AEF: 52 45    MOV   A,[X+69]
+    0AF1: 3F F0    MVI   [__r1],A
+    0AF3: 52 46    MOV   A,[X+70]
+    0AF5: 3F F0    MVI   [__r1],A
+    0AF7: 52 47    MOV   A,[X+71]
+    0AF9: 3F F0    MVI   [__r1],A
+*NODE:17:SW
+	0AFB: 52 3C    MOV   A,[X+60]
+    0AFD: 54 28    MOV   [X+40],A
+    0AFF: 52 3D    MOV   A,[X+61]
+    0B01: 54 29    MOV   [X+41],A
+    0B03: 52 3E    MOV   A,[X+62]
+    0B05: 54 2A    MOV   [X+42],A
+    0B07: 52 3F    MOV   A,[X+63]
+    0B09: 54 2B    MOV   [X+43],A
+    0B0B: 80 19    JMP   0x0B25
+*NODE:18:SW
+	0B0D: 52 2B    MOV   A,[X+43]
+    0B0F: 15 27    SUB   [X+39],A
+    0B11: 52 2A    MOV   A,[X+42]
+    0B13: 1D 26    SBB   [X+38],A
+    0B15: 52 29    MOV   A,[X+41]
+    0B17: 1D 25    SBB   [X+37],A
+    0B19: 52 28    MOV   A,[X+40]
+    0B1B: 1D 24    SBB   [X+36],A
+*NODE:19:SW
+	0B1D: 69 28    ASR   [X+40]
+    0B1F: 6F 29    RRC   [X+41]
+    0B21: 6F 2A    RRC   [X+42]
+    0B23: 6F 2B    RRC   [X+43]
+*NODE:20:SW
+	0B25: 52 27    MOV   A,[X+39]
+    0B27: 13 2B    SUB   A,[X+43]
+    0B29: 52 26    MOV   A,[X+38]
+    0B2B: 1B 2A    SBB   A,[X+42]
+    0B2D: 52 25    MOV   A,[X+37]
+    0B2F: 1B 29    SBB   A,[X+41]
+    0B31: 52 28    MOV   A,[X+40]
+    0B33: 31 80    XOR   A,0x80
+    0B35: 62 D0 00 MOV   REG[0xD0],0x0
+    0B38: 53 E5    MOV   [__rX],A
+    0B3A: 52 24    MOV   A,[X+36]
+    0B3C: 31 80    XOR   A,0x80
+    0B3E: 1A E5    SBB   A,[__rX]
+    0B40: DF CC    JNC   0x0B0D
+*NODE:21:SW
+	0B42: 52 2B    MOV   A,[X+43]
+    0B44: 05 27    ADD   [X+39],A
+    0B46: 52 2A    MOV   A,[X+42]
+    0B48: 0D 26    ADC   [X+38],A
+    0B4A: 52 29    MOV   A,[X+41]
+    0B4C: 0D 25    ADC   [X+37],A
+    0B4E: 52 28    MOV   A,[X+40]
+    0B50: 0D 24    ADC   [X+36],A
+*NODE:22:SW
+	0B52: 07 03 01 ADD   [X+3],0x1
+    0B55: 0F 02 00 ADC   [X+2],0x0
+    0B58: 0F 01 00 ADC   [X+1],0x0
+    0B5B: 0F 00 00 ADC   [X+0],0x0
+*NODE:23:SW
+	0B5E: 62 D0 00 MOV   REG[0xD0],0x0
+    0B61: 52 1F    MOV   A,[X+31]
+    0B63: 11 01    SUB   A,0x1
+    0B65: 53 EE    MOV   [__r3],A
+    0B67: 52 1E    MOV   A,[X+30]
+    0B69: 19 00    SBB   A,0x0
+    0B6B: 53 EF    MOV   [__r2],A
+    0B6D: 52 1D    MOV   A,[X+29]
+    0B6F: 19 00    SBB   A,0x0
+    0B71: 53 F0    MOV   [__r1],A
+    0B73: 52 1C    MOV   A,[X+28]
+    0B75: 19 00    SBB   A,0x0
+    0B77: 53 F1    MOV   [__r0],A
+    0B79: 52 03    MOV   A,[X+3]
+    0B7B: 12 EE    SUB   A,[__r3]
+    0B7D: 52 02    MOV   A,[X+2]
+    0B7F: 1A EF    SBB   A,[__r2]
+    0B81: 52 01    MOV   A,[X+1]
+    0B83: 1A F0    SBB   A,[__r1]
+    0B85: 51 F1    MOV   A,[__r0]
+    0B87: 31 80    XOR   A,0x80
+    0B89: 53 E5    MOV   [__rX],A
+    0B8B: 52 00    MOV   A,[X+0]
+    0B8D: 31 80    XOR   A,0x80
+    0B8F: 1A E5    SBB   A,[__rX]
+    0B91: CD 29    JC    0x08BB
+*NODE:24:SW
+	0B93: 56 2C BF MOV   [X+44],0xBF
+    0B96: 56 2D 80 MOV   [X+45],0x80
+    0B99: 56 2E 00 MOV   [X+46],0x0
+    0B9C: 56 2F 00 MOV   [X+47],0x0
+*NODE:25:SW
+	0B9F: 56 30 00 MOV   [X+48],0x0
+    0BA2: 56 31 00 MOV   [X+49],0x0
+    0BA5: 56 32 00 MOV   [X+50],0x0
+    0BA8: 56 33 00 MOV   [X+51],0x0
+*NODE:26:SW
+	0BAB: 56 20 00 MOV   [X+32],0x0
+    0BAE: 56 21 00 MOV   [X+33],0x0
+    0BB1: 56 22 00 MOV   [X+34],0x0
+    0BB4: 56 23 01 MOV   [X+35],0x1
+*NODE:27:SW
+	 0BB7: 56 38 00 MOV   [X+56],0x0
+    0BBA: 56 39 00 MOV   [X+57],0x0
+    0BBD: 56 3A 00 MOV   [X+58],0x0
+    0BC0: 56 3B 00 MOV   [X+59],0x0
+    0BC3: 86 E2    JMP   0x12A6
+*NODE:28:SW
+	0BC5: 52 20    MOV   A,[X+32]
+    0BC7: 54 18    MOV   [X+24],A
+    0BC9: 52 21    MOV   A,[X+33]
+    0BCB: 54 19    MOV   [X+25],A
+    0BCD: 52 22    MOV   A,[X+34]
+    0BCF: 54 1A    MOV   [X+26],A
+    0BD1: 52 23    MOV   A,[X+35]
+    0BD3: 54 1B    MOV   [X+27],A
+*NODE:29:SW
+	0BD5: 66 23    ASL   [X+35]
+    0BD7: 6C 22    RLC   [X+34]
+    0BD9: 6C 21    RLC   [X+33]
+    0BDB: 6C 20    RLC   [X+32]
+*NODE:30:SW
+	0BDD: 56 10 3F MOV   [X+16],0x3F
+    0BE0: 56 11 80 MOV   [X+17],0x80
+    0BE3: 56 12 00 MOV   [X+18],0x0
+    0BE6: 56 13 00 MOV   [X+19],0x0
+*NODE:31:SW
+	0BE9: 56 14 00 MOV   [X+20],0x0
+    0BEC: 56 15 00 MOV   [X+21],0x0
+    0BEF: 56 16 00 MOV   [X+22],0x0
+    0BF2: 56 17 00 MOV   [X+23],0x0
+*NODE:32:SW
+	0BF5: 56 24 00 MOV   [X+36],0x0
+    0BF8: 56 25 00 MOV   [X+37],0x0
+    0BFB: 56 26 00 MOV   [X+38],0x0
+    0BFE: 56 27 00 MOV   [X+39],0x0
+    0C01: 85 90    JMP   0x1192
+*NODE:33:SW
+	0C03: 52 24    MOV   A,[X+36]
+    0C05: 54 00    MOV   [X+0],A
+    0C07: 52 25    MOV   A,[X+37]
+    0C09: 54 01    MOV   [X+1],A
+    0C0B: 52 26    MOV   A,[X+38]
+    0C0D: 54 02    MOV   [X+2],A
+    0C0F: 52 27    MOV   A,[X+39]
+    0C11: 54 03    MOV   [X+3],A
+    0C13: 84 4C    JMP   0x1060
+*NODE:34:SW
+	0C15: 52 03    MOV   A,[X+3]
+    0C17: 03 1B    ADD   A,[X+27]
+    0C19: 54 07    MOV   [X+7],A
+    0C1B: 52 02    MOV   A,[X+2]
+    0C1D: 0B 1A    ADC   A,[X+26]
+    0C1F: 54 06    MOV   [X+6],A
+    0C21: 52 01    MOV   A,[X+1]
+    0C23: 0B 19    ADC   A,[X+25]
+    0C25: 54 05    MOV   [X+5],A
+    0C27: 52 00    MOV   A,[X+0]
+    0C29: 0B 18    ADC   A,[X+24]
+    0C2B: 54 04    MOV   [X+4],A
+*NODE:35:SW
+	0C2D: 62 D0 00 MOV   REG[0xD0],0x0
+    0C30: 52 04    MOV   A,[X+4]
+    0C32: 53 F1    MOV   [__r0],A
+    0C34: 52 05    MOV   A,[X+5]
+    0C36: 53 F0    MOV   [__r1],A
+    0C38: 52 06    MOV   A,[X+6]
+    0C3A: 53 EF    MOV   [__r2],A
+    0C3C: 52 07    MOV   A,[X+7]
+    0C3E: 53 EE    MOV   [__r3],A
+    0C40: 50 02    MOV   A,0x2
+    0C42: 62 D0 00 MOV   REG[0xD0],0x0
+    0C45: 65 EE    ASL   [__r3]
+    0C47: 6B EF    RLC   [__r2]
+    0C49: 6B F0    RLC   [__r1]
+    0C4B: 6B F1    RLC   [__r0]
+    0C4D: 78       DEC   A
+    0C4E: BF F3    JNZ   0x0C42
+    0C50: 51 EE    MOV   A,[__r3]
+    0C52: 53 F0    MOV   [__r1],A
+    0C54: 51 EF    MOV   A,[__r2]
+    0C56: 53 F1    MOV   [__r0],A
+    0C58: 51 F0    MOV   A,[__r1]
+    0C5A: 03 F4    ADD   A,[X-12]
+    0C5C: 53 EE    MOV   [__r3],A
+    0C5E: 51 F1    MOV   A,[__r0]
+    0C60: 0B F3    ADC   A,[X-13]
+    0C62: 60 D4    MOV   REG[0xD4],A
+    0C64: 3E EE    MVI   A,[__r3]
+    0C66: 53 ED    MOV   [__r4],A
+    0C68: 3E EE    MVI   A,[__r3]
+    0C6A: 53 EC    MOV   [__r5],A
+    0C6C: 3E EE    MVI   A,[__r3]
+    0C6E: 53 EB    MOV   [__r6],A
+    0C70: 3E EE    MVI   A,[__r3]
+    0C72: 53 EA    MOV   [__r7],A
+    0C74: 51 ED    MOV   A,[__r4]
+    0C76: 08       PUSH  A
+    0C77: 51 EC    MOV   A,[__r5]
+    0C79: 08       PUSH  A
+    0C7A: 51 EB    MOV   A,[__r6]
+    0C7C: 08       PUSH  A
+    0C7D: 51 EA    MOV   A,[__r7]
+    0C7F: 08       PUSH  A
+    0C80: 52 14    MOV   A,[X+20]
+    0C82: 08       PUSH  A
+    0C83: 52 15    MOV   A,[X+21]
+    0C85: 08       PUSH  A
+    0C86: 52 16    MOV   A,[X+22]
+    0C88: 08       PUSH  A
+    0C89: 52 17    MOV   A,[X+23]
+    0C8B: 08       PUSH  A
+    0C8C: 7C 1F 63 LCALL 0x1F63
+    0C8F: 18       POP   A
+    0C90: 53 EA    MOV   [__r7],A
+    0C92: 18       POP   A
+    0C93: 53 EB    MOV   [__r6],A
+    0C95: 18       POP   A
+    0C96: 53 EC    MOV   [__r5],A
+    0C98: 18       POP   A
+    0C99: 53 ED    MOV   [__r4],A
+*NODE:36:SW
+	0C9B: 38 FC    ADD   SP,0xFC
+    0C9D: 52 F6    MOV   A,[X-10]
+    0C9F: 04 F0    ADD   [__r1],A
+    0CA1: 52 F5    MOV   A,[X-11]
+    0CA3: 0C F1    ADC   [__r0],A
+    0CA5: 51 F1    MOV   A,[__r0]
+    0CA7: 60 D4    MOV   REG[0xD4],A
+    0CA9: 3E F0    MVI   A,[__r1]
+    0CAB: 53 E9    MOV   [__r8],A
+    0CAD: 3E F0    MVI   A,[__r1]
+    0CAF: 53 E8    MOV   [__r9],A
+    0CB1: 3E F0    MVI   A,[__r1]
+    0CB3: 53 E7    MOV   [__r10],A
+    0CB5: 3E F0    MVI   A,[__r1]
+    0CB7: 53 E6    MOV   [__r11],A
+    0CB9: 51 E9    MOV   A,[__r8]
+    0CBB: 08       PUSH  A
+    0CBC: 51 E8    MOV   A,[__r9]
+    0CBE: 08       PUSH  A
+    0CBF: 51 E7    MOV   A,[__r10]
+    0CC1: 08       PUSH  A
+    0CC2: 51 E6    MOV   A,[__r11]
+    0CC4: 08       PUSH  A
+    0CC5: 52 10    MOV   A,[X+16]
+    0CC7: 08       PUSH  A
+    0CC8: 52 11    MOV   A,[X+17]
+    0CCA: 08       PUSH  A
+    0CCB: 52 12    MOV   A,[X+18]
+    0CCD: 08       PUSH  A
+    0CCE: 52 13    MOV   A,[X+19]
+    0CD0: 08       PUSH  A
+    0CD1: 7C 1F 63 LCALL 0x1F63
+    0CD4: 18       POP   A
+    0CD5: 53 EE    MOV   [__r3],A
+    0CD7: 18       POP   A
+    0CD8: 53 EF    MOV   [__r2],A
+    0CDA: 18       POP   A
+    0CDB: 53 F0    MOV   [__r1],A
+    0CDD: 18       POP   A
+    0CDE: 53 F1    MOV   [__r0],A
+*NODE:37:SW
+	0CE0: 38 FC    ADD   SP,0xFC
+    0CE2: 51 ED    MOV   A,[__r4]
+    0CE4: 08       PUSH  A
+    0CE5: 51 EC    MOV   A,[__r5]
+    0CE7: 08       PUSH  A
+    0CE8: 51 EB    MOV   A,[__r6]
+    0CEA: 08       PUSH  A
+    0CEB: 51 EA    MOV   A,[__r7]
+    0CED: 08       PUSH  A
+    0CEE: 51 F1    MOV   A,[__r0]
+    0CF0: 08       PUSH  A
+    0CF1: 51 F0    MOV   A,[__r1]
+    0CF3: 08       PUSH  A
+    0CF4: 51 EF    MOV   A,[__r2]
+    0CF6: 08       PUSH  A
+    0CF7: 51 EE    MOV   A,[__r3]
+    0CF9: 08       PUSH  A
+    0CFA: 7C 20 8D LCALL 0x208D
+    0CFD: 18       POP   A
+    0CFE: 54 0B    MOV   [X+11],A
+    0D00: 18       POP   A
+    0D01: 54 0A    MOV   [X+10],A
+    0D03: 18       POP   A
+    0D04: 54 09    MOV   [X+9],A
+    0D06: 18       POP   A
+    0D07: 54 08    MOV   [X+8],A
+    0D09: 38 FC    ADD   SP,0xFC
+*NODE:38:SW
+	0D0B: 52 04    MOV   A,[X+4]
+    0D0D: 53 F1    MOV   [__r0],A
+    0D0F: 52 05    MOV   A,[X+5]
+    0D11: 53 F0    MOV   [__r1],A
+    0D13: 52 06    MOV   A,[X+6]
+    0D15: 53 EF    MOV   [__r2],A
+    0D17: 52 07    MOV   A,[X+7]
+    0D19: 53 EE    MOV   [__r3],A
+    0D1B: 50 02    MOV   A,0x2
+    0D1D: 62 D0 00 MOV   REG[0xD0],0x0
+    0D20: 65 EE    ASL   [__r3]
+    0D22: 6B EF    RLC   [__r2]
+    0D24: 6B F0    RLC   [__r1]
+    0D26: 6B F1    RLC   [__r0]
+    0D28: 78       DEC   A
+    0D29: BF F3    JNZ   0x0D1D
+    0D2B: 51 EE    MOV   A,[__r3]
+    0D2D: 53 F0    MOV   [__r1],A
+    0D2F: 51 EF    MOV   A,[__r2]
+    0D31: 53 F1    MOV   [__r0],A
+    0D33: 51 F0    MOV   A,[__r1]
+    0D35: 03 F6    ADD   A,[X-10]
+    0D37: 53 EE    MOV   [__r3],A
+    0D39: 51 F1    MOV   A,[__r0]
+    0D3B: 0B F5    ADC   A,[X-11]
+    0D3D: 60 D4    MOV   REG[0xD4],A
+    0D3F: 3E EE    MVI   A,[__r3]
+    0D41: 53 ED    MOV   [__r4],A
+    0D43: 3E EE    MVI   A,[__r3]
+    0D45: 53 EC    MOV   [__r5],A
+    0D47: 3E EE    MVI   A,[__r3]
+    0D49: 53 EB    MOV   [__r6],A
+    0D4B: 3E EE    MVI   A,[__r3]
+    0D4D: 53 EA    MOV   [__r7],A
+    0D4F: 51 ED    MOV   A,[__r4]
+    0D51: 08       PUSH  A
+    0D52: 51 EC    MOV   A,[__r5]
+    0D54: 08       PUSH  A
+    0D55: 51 EB    MOV   A,[__r6]
+    0D57: 08       PUSH  A
+    0D58: 51 EA    MOV   A,[__r7]
+    0D5A: 08       PUSH  A
+    0D5B: 52 14    MOV   A,[X+20]
+    0D5D: 08       PUSH  A
+    0D5E: 52 15    MOV   A,[X+21]
+    0D60: 08       PUSH  A
+    0D61: 52 16    MOV   A,[X+22]
+    0D63: 08       PUSH  A
+    0D64: 52 17    MOV   A,[X+23]
+    0D66: 08       PUSH  A
+    0D67: 7C 1F 63 LCALL 0x1F63
+    0D6A: 18       POP   A
+    0D6B: 53 EA    MOV   [__r7],A
+    0D6D: 18       POP   A
+    0D6E: 53 EB    MOV   [__r6],A
+    0D70: 18       POP   A
+    0D71: 53 EC    MOV   [__r5],A
+    0D73: 18       POP   A
+    0D74: 53 ED    MOV   [__r4],A
+*NODE:39:SW
+	0D76: 38 FC    ADD   SP,0xFC
+    0D78: 52 F4    MOV   A,[X-12]
+    0D7A: 04 F0    ADD   [__r1],A
+    0D7C: 52 F3    MOV   A,[X-13]
+    0D7E: 0C F1    ADC   [__r0],A
+    0D80: 51 F1    MOV   A,[__r0]
+    0D82: 60 D4    MOV   REG[0xD4],A
+    0D84: 3E F0    MVI   A,[__r1]
+    0D86: 53 E9    MOV   [__r8],A
+    0D88: 3E F0    MVI   A,[__r1]
+    0D8A: 53 E8    MOV   [__r9],A
+    0D8C: 3E F0    MVI   A,[__r1]
+    0D8E: 53 E7    MOV   [__r10],A
+    0D90: 3E F0    MVI   A,[__r1]
+    0D92: 53 E6    MOV   [__r11],A
+    0D94: 51 E9    MOV   A,[__r8]
+    0D96: 08       PUSH  A
+    0D97: 51 E8    MOV   A,[__r9]
+    0D99: 08       PUSH  A
+    0D9A: 51 E7    MOV   A,[__r10]
+    0D9C: 08       PUSH  A
+    0D9D: 51 E6    MOV   A,[__r11]
+    0D9F: 08       PUSH  A
+    0DA0: 52 10    MOV   A,[X+16]
+    0DA2: 08       PUSH  A
+    0DA3: 52 11    MOV   A,[X+17]
+    0DA5: 08       PUSH  A
+    0DA6: 52 12    MOV   A,[X+18]
+    0DA8: 08       PUSH  A
+    0DA9: 52 13    MOV   A,[X+19]
+    0DAB: 08       PUSH  A
+    0DAC: 7C 1F 63 LCALL 0x1F63
+    0DAF: 18       POP   A
+    0DB0: 53 EE    MOV   [__r3],A
+    0DB2: 18       POP   A
+    0DB3: 53 EF    MOV   [__r2],A
+    0DB5: 18       POP   A
+    0DB6: 53 F0    MOV   [__r1],A
+    0DB8: 18       POP   A
+    0DB9: 53 F1    MOV   [__r0],A
+*NODE:40:SW
+	0DBB: 38 FC    ADD   SP,0xFC
+    0DBD: 51 ED    MOV   A,[__r4]
+    0DBF: 08       PUSH  A
+    0DC0: 51 EC    MOV   A,[__r5]
+    0DC2: 08       PUSH  A
+    0DC3: 51 EB    MOV   A,[__r6]
+    0DC5: 08       PUSH  A
+    0DC6: 51 EA    MOV   A,[__r7]
+    0DC8: 08       PUSH  A
+    0DC9: 51 F1    MOV   A,[__r0]
+    0DCB: 08       PUSH  A
+    0DCC: 51 F0    MOV   A,[__r1]
+    0DCE: 08       PUSH  A
+    0DCF: 51 EF    MOV   A,[__r2]
+    0DD1: 08       PUSH  A
+    0DD2: 51 EE    MOV   A,[__r3]
+    0DD4: 08       PUSH  A
+    0DD5: 7C 1D 23 LCALL 0x1D23
+    0DD8: 18       POP   A
+    0DD9: 54 0F    MOV   [X+15],A
+    0DDB: 18       POP   A
+    0DDC: 54 0E    MOV   [X+14],A
+    0DDE: 18       POP   A
+    0DDF: 54 0D    MOV   [X+13],A
+    0DE1: 18       POP   A
+    0DE2: 54 0C    MOV   [X+12],A
+    0DE4: 38 FC    ADD   SP,0xFC
+*NODE:41:SW
+	0DE6: 52 00    MOV   A,[X+0]
+    0DE8: 53 F1    MOV   [__r0],A
+    0DEA: 52 01    MOV   A,[X+1]
+    0DEC: 53 F0    MOV   [__r1],A
+    0DEE: 52 02    MOV   A,[X+2]
+    0DF0: 53 EF    MOV   [__r2],A
+    0DF2: 52 03    MOV   A,[X+3]
+    0DF4: 53 EE    MOV   [__r3],A
+    0DF6: 50 02    MOV   A,0x2
+    0DF8: 62 D0 00 MOV   REG[0xD0],0x0
+    0DFB: 65 EE    ASL   [__r3]
+    0DFD: 6B EF    RLC   [__r2]
+    0DFF: 6B F0    RLC   [__r1]
+    0E01: 6B F1    RLC   [__r0]
+    0E03: 78       DEC   A
+    0E04: BF F3    JNZ   0x0DF8
+    0E06: 51 EE    MOV   A,[__r3]
+    0E08: 53 F0    MOV   [__r1],A
+    0E0A: 51 EF    MOV   A,[__r2]
+    0E0C: 53 F1    MOV   [__r0],A
+    0E0E: 52 F6    MOV   A,[X-10]
+    0E10: 04 F0    ADD   [__r1],A
+    0E12: 52 F5    MOV   A,[X-11]
+    0E14: 0C F1    ADC   [__r0],A
+    0E16: 51 F1    MOV   A,[__r0]
+    0E18: 60 D4    MOV   REG[0xD4],A
+    0E1A: 3E F0    MVI   A,[__r1]
+    0E1C: 53 ED    MOV   [__r4],A
+    0E1E: 3E F0    MVI   A,[__r1]
+    0E20: 53 EC    MOV   [__r5],A
+    0E22: 3E F0    MVI   A,[__r1]
+    0E24: 53 EB    MOV   [__r6],A
+    0E26: 3E F0    MVI   A,[__r1]
+    0E28: 53 EA    MOV   [__r7],A
+    0E2A: 52 08    MOV   A,[X+8]
+    0E2C: 08       PUSH  A
+    0E2D: 52 09    MOV   A,[X+9]
+    0E2F: 08       PUSH  A
+    0E30: 52 0A    MOV   A,[X+10]
+    0E32: 08       PUSH  A
+    0E33: 52 0B    MOV   A,[X+11]
+    0E35: 08       PUSH  A
+    0E36: 51 ED    MOV   A,[__r4]
+    0E38: 08       PUSH  A
+    0E39: 51 EC    MOV   A,[__r5]
+    0E3B: 08       PUSH  A
+    0E3C: 51 EB    MOV   A,[__r6]
+    0E3E: 08       PUSH  A
+    0E3F: 51 EA    MOV   A,[__r7]
+    0E41: 08       PUSH  A
+    0E42: 7C 20 8D LCALL 0x208D
+    0E45: 18       POP   A
+    0E46: 53 EE    MOV   [__r3],A
+    0E48: 18       POP   A
+    0E49: 53 EF    MOV   [__r2],A
+    0E4B: 18       POP   A
+    0E4C: 53 F0    MOV   [__r1],A
+    0E4E: 18       POP   A
+    0E4F: 53 F1    MOV   [__r0],A
+*NODE:42:SW
+	0E51: 38 FC    ADD   SP,0xFC
+    0E53: 52 04    MOV   A,[X+4]
+    0E55: 53 ED    MOV   [__r4],A
+    0E57: 52 05    MOV   A,[X+5]
+    0E59: 53 EC    MOV   [__r5],A
+    0E5B: 52 06    MOV   A,[X+6]
+    0E5D: 53 EB    MOV   [__r6],A
+    0E5F: 52 07    MOV   A,[X+7]
+    0E61: 53 EA    MOV   [__r7],A
+    0E63: 50 02    MOV   A,0x2
+    0E65: 62 D0 00 MOV   REG[0xD0],0x0
+    0E68: 65 EA    ASL   [__r7]
+    0E6A: 6B EB    RLC   [__r6]
+    0E6C: 6B EC    RLC   [__r5]
+    0E6E: 6B ED    RLC   [__r4]
+    0E70: 78       DEC   A
+    0E71: BF F3    JNZ   0x0E65
+    0E73: 51 EA    MOV   A,[__r7]
+    0E75: 53 EC    MOV   [__r5],A
+    0E77: 51 EB    MOV   A,[__r6]
+    0E79: 53 ED    MOV   [__r4],A
+    0E7B: 52 F6    MOV   A,[X-10]
+    0E7D: 04 EC    ADD   [__r5],A
+    0E7F: 52 F5    MOV   A,[X-11]
+    0E81: 0C ED    ADC   [__r4],A
+    0E83: 51 ED    MOV   A,[__r4]
+    0E85: 60 D5    MOV   REG[0xD5],A
+    0E87: 51 F1    MOV   A,[__r0]
+    0E89: 3F EC    MVI   [__r5],A
+    0E8B: 51 F0    MOV   A,[__r1]
+    0E8D: 3F EC    MVI   [__r5],A
+    0E8F: 51 EF    MOV   A,[__r2]
+    0E91: 3F EC    MVI   [__r5],A
+    0E93: 51 EE    MOV   A,[__r3]
+    0E95: 3F EC    MVI   [__r5],A
+*NODE:43:SW
+	0E97: 52 00    MOV   A,[X+0]
+    0E99: 53 F1    MOV   [__r0],A
+    0E9B: 52 01    MOV   A,[X+1]
+    0E9D: 53 F0    MOV   [__r1],A
+    0E9F: 52 02    MOV   A,[X+2]
+    0EA1: 53 EF    MOV   [__r2],A
+    0EA3: 52 03    MOV   A,[X+3]
+    0EA5: 53 EE    MOV   [__r3],A
+    0EA7: 50 02    MOV   A,0x2
+    0EA9: 62 D0 00 MOV   REG[0xD0],0x0
+    0EAC: 65 EE    ASL   [__r3]
+    0EAE: 6B EF    RLC   [__r2]
+    0EB0: 6B F0    RLC   [__r1]
+    0EB2: 6B F1    RLC   [__r0]
+    0EB4: 78       DEC   A
+    0EB5: BF F3    JNZ   0x0EA9
+    0EB7: 51 EE    MOV   A,[__r3]
+    0EB9: 53 F0    MOV   [__r1],A
+    0EBB: 51 EF    MOV   A,[__r2]
+    0EBD: 53 F1    MOV   [__r0],A
+    0EBF: 52 F4    MOV   A,[X-12]
+    0EC1: 04 F0    ADD   [__r1],A
+    0EC3: 52 F3    MOV   A,[X-13]
+    0EC5: 0C F1    ADC   [__r0],A
+    0EC7: 51 F1    MOV   A,[__r0]
+    0EC9: 60 D4    MOV   REG[0xD4],A
+    0ECB: 3E F0    MVI   A,[__r1]
+    0ECD: 53 ED    MOV   [__r4],A
+    0ECF: 3E F0    MVI   A,[__r1]
+    0ED1: 53 EC    MOV   [__r5],A
+    0ED3: 3E F0    MVI   A,[__r1]
+    0ED5: 53 EB    MOV   [__r6],A
+    0ED7: 3E F0    MVI   A,[__r1]
+    0ED9: 53 EA    MOV   [__r7],A
+    0EDB: 52 0C    MOV   A,[X+12]
+    0EDD: 08       PUSH  A
+    0EDE: 52 0D    MOV   A,[X+13]
+    0EE0: 08       PUSH  A
+    0EE1: 52 0E    MOV   A,[X+14]
+    0EE3: 08       PUSH  A
+    0EE4: 52 0F    MOV   A,[X+15]
+    0EE6: 08       PUSH  A
+    0EE7: 51 ED    MOV   A,[__r4]
+    0EE9: 08       PUSH  A
+    0EEA: 51 EC    MOV   A,[__r5]
+    0EEC: 08       PUSH  A
+    0EED: 51 EB    MOV   A,[__r6]
+    0EEF: 08       PUSH  A
+    0EF0: 51 EA    MOV   A,[__r7]
+    0EF2: 08       PUSH  A
+    0EF3: 7C 20 8D LCALL 0x208D
+    0EF6: 18       POP   A
+    0EF7: 53 EE    MOV   [__r3],A
+    0EF9: 18       POP   A
+    0EFA: 53 EF    MOV   [__r2],A
+    0EFC: 18       POP   A
+    0EFD: 53 F0    MOV   [__r1],A
+    0EFF: 18       POP   A
+    0F00: 53 F1    MOV   [__r0],A
+*NODE:44:SW
+	0F02: 38 FC    ADD   SP,0xFC
+    0F04: 52 04    MOV   A,[X+4]
+    0F06: 53 ED    MOV   [__r4],A
+    0F08: 52 05    MOV   A,[X+5]
+    0F0A: 53 EC    MOV   [__r5],A
+    0F0C: 52 06    MOV   A,[X+6]
+    0F0E: 53 EB    MOV   [__r6],A
+    0F10: 52 07    MOV   A,[X+7]
+    0F12: 53 EA    MOV   [__r7],A
+    0F14: 50 02    MOV   A,0x2
+    0F16: 62 D0 00 MOV   REG[0xD0],0x0
+    0F19: 65 EA    ASL   [__r7]
+    0F1B: 6B EB    RLC   [__r6]
+    0F1D: 6B EC    RLC   [__r5]
+    0F1F: 6B ED    RLC   [__r4]
+    0F21: 78       DEC   A
+    0F22: BF F3    JNZ   0x0F16
+    0F24: 51 EA    MOV   A,[__r7]
+    0F26: 53 EC    MOV   [__r5],A
+    0F28: 51 EB    MOV   A,[__r6]
+    0F2A: 53 ED    MOV   [__r4],A
+    0F2C: 52 F4    MOV   A,[X-12]
+    0F2E: 04 EC    ADD   [__r5],A
+    0F30: 52 F3    MOV   A,[X-13]
+    0F32: 0C ED    ADC   [__r4],A
+    0F34: 51 ED    MOV   A,[__r4]
+    0F36: 60 D5    MOV   REG[0xD5],A
+    0F38: 51 F1    MOV   A,[__r0]
+    0F3A: 3F EC    MVI   [__r5],A
+    0F3C: 51 F0    MOV   A,[__r1]
+    0F3E: 3F EC    MVI   [__r5],A
+    0F40: 51 EF    MOV   A,[__r2]
+    0F42: 3F EC    MVI   [__r5],A
+    0F44: 51 EE    MOV   A,[__r3]
+    0F46: 3F EC    MVI   [__r5],A
+*NODE:45:SW
+	0F48: 52 00    MOV   A,[X+0]
+    0F4A: 53 F1    MOV   [__r0],A
+    0F4C: 52 01    MOV   A,[X+1]
+    0F4E: 53 F0    MOV   [__r1],A
+    0F50: 52 02    MOV   A,[X+2]
+    0F52: 53 EF    MOV   [__r2],A
+    0F54: 52 03    MOV   A,[X+3]
+    0F56: 53 EE    MOV   [__r3],A
+    0F58: 50 02    MOV   A,0x2
+    0F5A: 62 D0 00 MOV   REG[0xD0],0x0
+    0F5D: 65 EE    ASL   [__r3]
+    0F5F: 6B EF    RLC   [__r2]
+    0F61: 6B F0    RLC   [__r1]
+    0F63: 6B F1    RLC   [__r0]
+    0F65: 78       DEC   A
+    0F66: BF F3    JNZ   0x0F5A
+    0F68: 51 EE    MOV   A,[__r3]
+    0F6A: 53 F0    MOV   [__r1],A
+    0F6C: 51 EF    MOV   A,[__r2]
+    0F6E: 53 F1    MOV   [__r0],A
+    0F70: 52 F6    MOV   A,[X-10]
+    0F72: 04 F0    ADD   [__r1],A
+    0F74: 52 F5    MOV   A,[X-11]
+    0F76: 0C F1    ADC   [__r0],A
+    0F78: 51 F1    MOV   A,[__r0]
+    0F7A: 60 D4    MOV   REG[0xD4],A
+    0F7C: 3E F0    MVI   A,[__r1]
+    0F7E: 53 ED    MOV   [__r4],A
+    0F80: 3E F0    MVI   A,[__r1]
+    0F82: 53 EC    MOV   [__r5],A
+    0F84: 3E F0    MVI   A,[__r1]
+    0F86: 53 EB    MOV   [__r6],A
+    0F88: 3E F0    MVI   A,[__r1]
+    0F8A: 16 F0 04 SUB   [__r1],0x4
+    0F8D: 53 EA    MOV   [__r7],A
+    0F8F: 52 08    MOV   A,[X+8]
+    0F91: 08       PUSH  A
+    0F92: 52 09    MOV   A,[X+9]
+    0F94: 08       PUSH  A
+    0F95: 52 0A    MOV   A,[X+10]
+    0F97: 08       PUSH  A
+    0F98: 52 0B    MOV   A,[X+11]
+    0F9A: 08       PUSH  A
+    0F9B: 51 ED    MOV   A,[__r4]
+    0F9D: 08       PUSH  A
+    0F9E: 51 EC    MOV   A,[__r5]
+    0FA0: 08       PUSH  A
+    0FA1: 51 EB    MOV   A,[__r6]
+    0FA3: 08       PUSH  A
+    0FA4: 51 EA    MOV   A,[__r7]
+    0FA6: 08       PUSH  A
+    0FA7: 7C 1D 23 LCALL 0x1D23
+    0FAA: 18       POP   A
+    0FAB: 53 EA    MOV   [__r7],A
+    0FAD: 18       POP   A
+    0FAE: 53 EB    MOV   [__r6],A
+    0FB0: 18       POP   A
+    0FB1: 53 EC    MOV   [__r5],A
+    0FB3: 18       POP   A
+    0FB4: 53 ED    MOV   [__r4],A
+*NODE:46:SW
+	0FB6: 38 FC    ADD   SP,0xFC
+    0FB8: 51 F1    MOV   A,[__r0]
+    0FBA: 60 D5    MOV   REG[0xD5],A
+    0FBC: 51 ED    MOV   A,[__r4]
+    0FBE: 3F F0    MVI   [__r1],A
+    0FC0: 51 EC    MOV   A,[__r5]
+    0FC2: 3F F0    MVI   [__r1],A
+    0FC4: 51 EB    MOV   A,[__r6]
+    0FC6: 3F F0    MVI   [__r1],A
+    0FC8: 51 EA    MOV   A,[__r7]
+    0FCA: 3F F0    MVI   [__r1],A
+*NODE:47:SW
+	0FCC: 52 00    MOV   A,[X+0]
+    0FCE: 53 F1    MOV   [__r0],A
+    0FD0: 52 01    MOV   A,[X+1]
+    0FD2: 53 F0    MOV   [__r1],A
+    0FD4: 52 02    MOV   A,[X+2]
+    0FD6: 53 EF    MOV   [__r2],A
+    0FD8: 52 03    MOV   A,[X+3]
+    0FDA: 53 EE    MOV   [__r3],A
+    0FDC: 50 02    MOV   A,0x2
+    0FDE: 62 D0 00 MOV   REG[0xD0],0x0
+    0FE1: 65 EE    ASL   [__r3]
+    0FE3: 6B EF    RLC   [__r2]
+    0FE5: 6B F0    RLC   [__r1]
+    0FE7: 6B F1    RLC   [__r0]
+    0FE9: 78       DEC   A
+    0FEA: BF F3    JNZ   0x0FDE
+    0FEC: 51 EE    MOV   A,[__r3]
+    0FEE: 53 F0    MOV   [__r1],A
+    0FF0: 51 EF    MOV   A,[__r2]
+    0FF2: 53 F1    MOV   [__r0],A
+    0FF4: 52 F4    MOV   A,[X-12]
+    0FF6: 04 F0    ADD   [__r1],A
+    0FF8: 52 F3    MOV   A,[X-13]
+    0FFA: 0C F1    ADC   [__r0],A
+    0FFC: 51 F1    MOV   A,[__r0]
+    0FFE: 60 D4    MOV   REG[0xD4],A
+    1000: 3E F0    MVI   A,[__r1]
+    1002: 53 ED    MOV   [__r4],A
+    1004: 3E F0    MVI   A,[__r1]
+    1006: 53 EC    MOV   [__r5],A
+    1008: 3E F0    MVI   A,[__r1]
+    100A: 53 EB    MOV   [__r6],A
+    100C: 3E F0    MVI   A,[__r1]
+    100E: 16 F0 04 SUB   [__r1],0x4
+    1011: 53 EA    MOV   [__r7],A
+    1013: 52 0C    MOV   A,[X+12]
+    1015: 08       PUSH  A
+    1016: 52 0D    MOV   A,[X+13]
+    1018: 08       PUSH  A
+    1019: 52 0E    MOV   A,[X+14]
+    101B: 08       PUSH  A
+    101C: 52 0F    MOV   A,[X+15]
+    101E: 08       PUSH  A
+    101F: 51 ED    MOV   A,[__r4]
+    1021: 08       PUSH  A
+    1022: 51 EC    MOV   A,[__r5]
+    1024: 08       PUSH  A
+    1025: 51 EB    MOV   A,[__r6]
+    1027: 08       PUSH  A
+    1028: 51 EA    MOV   A,[__r7]
+    102A: 08       PUSH  A
+    102B: 7C 1D 23 LCALL 0x1D23
+    102E: 18       POP   A
+    102F: 53 EA    MOV   [__r7],A
+    1031: 18       POP   A
+    1032: 53 EB    MOV   [__r6],A
+    1034: 18       POP   A
+    1035: 53 EC    MOV   [__r5],A
+    1037: 18       POP   A
+    1038: 53 ED    MOV   [__r4],A
+*NODE:48:SW
+	103A: 38 FC    ADD   SP,0xFC
+    103C: 51 F1    MOV   A,[__r0]
+    103E: 60 D5    MOV   REG[0xD5],A
+    1040: 51 ED    MOV   A,[__r4]
+    1042: 3F F0    MVI   [__r1],A
+    1044: 51 EC    MOV   A,[__r5]
+    1046: 3F F0    MVI   [__r1],A
+    1048: 51 EB    MOV   A,[__r6]
+    104A: 3F F0    MVI   [__r1],A
+    104C: 51 EA    MOV   A,[__r7]
+    104E: 3F F0    MVI   [__r1],A
+*NODE:49:SW
+	1050: 52 23    MOV   A,[X+35]
+    1052: 05 03    ADD   [X+3],A
+    1054: 52 22    MOV   A,[X+34]
+    1056: 0D 02    ADC   [X+2],A
+    1058: 52 21    MOV   A,[X+33]
+    105A: 0D 01    ADC   [X+1],A
+    105C: 52 20    MOV   A,[X+32]
+    105E: 0D 00    ADC   [X+0],A
+*NODE:50:SW
+	1060: 52 03    MOV   A,[X+3]
+    1062: 13 1F    SUB   A,[X+31]
+    1064: 52 02    MOV   A,[X+2]
+    1066: 1B 1E    SBB   A,[X+30]
+    1068: 52 01    MOV   A,[X+1]
+    106A: 1B 1D    SBB   A,[X+29]
+    106C: 52 1C    MOV   A,[X+28]
+    106E: 31 80    XOR   A,0x80
+    1070: 62 D0 00 MOV   REG[0xD0],0x0
+    1073: 53 E5    MOV   [__rX],A
+    1075: 52 00    MOV   A,[X+0]
+    1077: 31 80    XOR   A,0x80
+    1079: 1A E5    SBB   A,[__rX]
+    107B: CB 99    JC    0x0C15
+*NODE:51:SW
+	107D: 62 D0 00 MOV   REG[0xD0],0x0
+    1080: 52 30    MOV   A,[X+48]
+    1082: 08       PUSH  A
+    1083: 52 31    MOV   A,[X+49]
+    1085: 08       PUSH  A
+    1086: 52 32    MOV   A,[X+50]
+    1088: 08       PUSH  A
+    1089: 52 33    MOV   A,[X+51]
+    108B: 08       PUSH  A
+    108C: 52 14    MOV   A,[X+20]
+    108E: 08       PUSH  A
+    108F: 52 15    MOV   A,[X+21]
+    1091: 08       PUSH  A
+    1092: 52 16    MOV   A,[X+22]
+    1094: 08       PUSH  A
+    1095: 52 17    MOV   A,[X+23]
+    1097: 08       PUSH  A
+    1098: 7C 1F 63 LCALL 0x1F63
+    109B: 18       POP   A
+    109C: 53 EE    MOV   [__r3],A
+    109E: 18       POP   A
+    109F: 53 EF    MOV   [__r2],A
+    10A1: 18       POP   A
+    10A2: 53 F0    MOV   [__r1],A
+    10A4: 18       POP   A
+    10A5: 53 F1    MOV   [__r0],A
+*NODE:52:SW
+	10A7: 38 FC    ADD   SP,0xFC
+    10A9: 52 2C    MOV   A,[X+44]
+    10AB: 08       PUSH  A
+    10AC: 52 2D    MOV   A,[X+45]
+    10AE: 08       PUSH  A
+    10AF: 52 2E    MOV   A,[X+46]
+    10B1: 08       PUSH  A
+    10B2: 52 2F    MOV   A,[X+47]
+    10B4: 08       PUSH  A
+    10B5: 52 10    MOV   A,[X+16]
+    10B7: 08       PUSH  A
+    10B8: 52 11    MOV   A,[X+17]
+    10BA: 08       PUSH  A
+    10BB: 52 12    MOV   A,[X+18]
+    10BD: 08       PUSH  A
+    10BE: 52 13    MOV   A,[X+19]
+    10C0: 08       PUSH  A
+    10C1: 7C 1F 63 LCALL 0x1F63
+    10C4: 18       POP   A
+    10C5: 53 EA    MOV   [__r7],A
+    10C7: 18       POP   A
+    10C8: 53 EB    MOV   [__r6],A
+    10CA: 18       POP   A
+    10CB: 53 EC    MOV   [__r5],A
+    10CD: 18       POP   A
+    10CE: 53 ED    MOV   [__r4],A
+*NODE:53:SW
+	10D0: 38 FC    ADD   SP,0xFC
+    10D2: 51 F1    MOV   A,[__r0]
+    10D4: 08       PUSH  A
+    10D5: 51 F0    MOV   A,[__r1]
+    10D7: 08       PUSH  A
+    10D8: 51 EF    MOV   A,[__r2]
+    10DA: 08       PUSH  A
+    10DB: 51 EE    MOV   A,[__r3]
+    10DD: 08       PUSH  A
+    10DE: 51 ED    MOV   A,[__r4]
+    10E0: 08       PUSH  A
+    10E1: 51 EC    MOV   A,[__r5]
+    10E3: 08       PUSH  A
+    10E4: 51 EB    MOV   A,[__r6]
+    10E6: 08       PUSH  A
+    10E7: 51 EA    MOV   A,[__r7]
+    10E9: 08       PUSH  A
+    10EA: 7C 20 8D LCALL 0x208D
+    10ED: 18       POP   A
+    10EE: 54 37    MOV   [X+55],A
+    10F0: 18       POP   A
+    10F1: 54 36    MOV   [X+54],A
+    10F3: 18       POP   A
+    10F4: 54 35    MOV   [X+53],A
+    10F6: 18       POP   A
+    10F7: 54 34    MOV   [X+52],A
+    10F9: 38 FC    ADD   SP,0xFC
+*NODE:54:SW
+	10FB: 52 2C    MOV   A,[X+44]
+    10FD: 08       PUSH  A
+    10FE: 52 2D    MOV   A,[X+45]
+    1100: 08       PUSH  A
+    1101: 52 2E    MOV   A,[X+46]
+    1103: 08       PUSH  A
+    1104: 52 2F    MOV   A,[X+47]
+    1106: 08       PUSH  A
+    1107: 52 14    MOV   A,[X+20]
+    1109: 08       PUSH  A
+    110A: 52 15    MOV   A,[X+21]
+    110C: 08       PUSH  A
+    110D: 52 16    MOV   A,[X+22]
+    110F: 08       PUSH  A
+    1110: 52 17    MOV   A,[X+23]
+    1112: 08       PUSH  A
+    1113: 7C 1F 63 LCALL 0x1F63
+    1116: 18       POP   A
+    1117: 53 EE    MOV   [__r3],A
+    1119: 18       POP   A
+    111A: 53 EF    MOV   [__r2],A
+    111C: 18       POP   A
+    111D: 53 F0    MOV   [__r1],A
+    111F: 18       POP   A
+    1120: 53 F1    MOV   [__r0],A
+*NODE:55:SW
+	1122: 38 FC    ADD   SP,0xFC
+    1124: 52 30    MOV   A,[X+48]
+    1126: 08       PUSH  A
+    1127: 52 31    MOV   A,[X+49]
+    1129: 08       PUSH  A
+    112A: 52 32    MOV   A,[X+50]
+    112C: 08       PUSH  A
+    112D: 52 33    MOV   A,[X+51]
+    112F: 08       PUSH  A
+    1130: 52 10    MOV   A,[X+16]
+    1132: 08       PUSH  A
+    1133: 52 11    MOV   A,[X+17]
+    1135: 08       PUSH  A
+    1136: 52 12    MOV   A,[X+18]
+    1138: 08       PUSH  A
+    1139: 52 13    MOV   A,[X+19]
+    113B: 08       PUSH  A
+    113C: 7C 1F 63 LCALL 0x1F63
+    113F: 18       POP   A
+    1140: 53 EA    MOV   [__r7],A
+    1142: 18       POP   A
+    1143: 53 EB    MOV   [__r6],A
+    1145: 18       POP   A
+    1146: 53 EC    MOV   [__r5],A
+    1148: 18       POP   A
+    1149: 53 ED    MOV   [__r4],A
+*NODE:56:SW
+	114B: 38 FC    ADD   SP,0xFC
+    114D: 51 F1    MOV   A,[__r0]
+    114F: 08       PUSH  A
+    1150: 51 F0    MOV   A,[__r1]
+    1152: 08       PUSH  A
+    1153: 51 EF    MOV   A,[__r2]
+    1155: 08       PUSH  A
+    1156: 51 EE    MOV   A,[__r3]
+    1158: 08       PUSH  A
+    1159: 51 ED    MOV   A,[__r4]
+    115B: 08       PUSH  A
+    115C: 51 EC    MOV   A,[__r5]
+    115E: 08       PUSH  A
+    115F: 51 EB    MOV   A,[__r6]
+    1161: 08       PUSH  A
+    1162: 51 EA    MOV   A,[__r7]
+    1164: 08       PUSH  A
+    1165: 7C 1D 23 LCALL 0x1D23
+    1168: 18       POP   A
+    1169: 54 17    MOV   [X+23],A
+    116B: 18       POP   A
+    116C: 54 16    MOV   [X+22],A
+    116E: 18       POP   A
+    116F: 54 15    MOV   [X+21],A
+    1171: 18       POP   A
+    1172: 54 14    MOV   [X+20],A
+    1174: 38 FC    ADD   SP,0xFC
+*NODE:57:SW
+	1176: 52 34    MOV   A,[X+52]
+    1178: 54 10    MOV   [X+16],A
+    117A: 52 35    MOV   A,[X+53]
+    117C: 54 11    MOV   [X+17],A
+    117E: 52 36    MOV   A,[X+54]
+    1180: 54 12    MOV   [X+18],A
+    1182: 52 37    MOV   A,[X+55]
+    1184: 54 13    MOV   [X+19],A
+*NODE:58:SW
+	1186: 07 27 01 ADD   [X+39],0x1
+    1189: 0F 26 00 ADC   [X+38],0x0
+    118C: 0F 25 00 ADC   [X+37],0x0
+    118F: 0F 24 00 ADC   [X+36],0x0
+*NODE:59:SW
+	1192: 52 27    MOV   A,[X+39]
+    1194: 13 1B    SUB   A,[X+27]
+    1196: 52 26    MOV   A,[X+38]
+    1198: 1B 1A    SBB   A,[X+26]
+    119A: 52 25    MOV   A,[X+37]
+    119C: 1B 19    SBB   A,[X+25]
+    119E: 52 18    MOV   A,[X+24]
+    11A0: 31 80    XOR   A,0x80
+    11A2: 62 D0 00 MOV   REG[0xD0],0x0
+    11A5: 53 E5    MOV   [__rX],A
+    11A7: 52 24    MOV   A,[X+36]
+    11A9: 31 80    XOR   A,0x80
+    11AB: 1A E5    SBB   A,[__rX]
+    11AD: CA 55    JC    0x0C03
+*NODE:60:SW
+	11D7: 38 FC    ADD   SP,0xFC
+    11D9: 50 40    MOV   A,0x40
+    11DB: 08       PUSH  A
+    11DC: 50 00    MOV   A,0x0
+    11DE: 08       PUSH  A
+    11DF: 08       PUSH  A
+    11E0: 08       PUSH  A
+    11E1: 51 F1    MOV   A,[__r0]
+    11E3: 08       PUSH  A
+    11E4: 51 F0    MOV   A,[__r1]
+    11E6: 08       PUSH  A
+    11E7: 51 EF    MOV   A,[__r2]
+    11E9: 08       PUSH  A
+    11EA: 51 EE    MOV   A,[__r3]
+    11EC: 08       PUSH  A
+    11ED: 7C 1E 80 LCALL 0x1E80
+    11F0: 18       POP   A
+    11F1: 53 EE    MOV   [__r3],A
+    11F3: 18       POP   A
+    11F4: 53 EF    MOV   [__r2],A
+    11F6: 18       POP   A
+    11F7: 53 F0    MOV   [__r1],A
+    11F9: 18       POP   A
+    11FA: 38 FC    ADD   SP,0xFC
+    11FC: 08       PUSH  A
+    11FD: 51 F0    MOV   A,[__r1]
+    11FF: 08       PUSH  A
+    1200: 51 EF    MOV   A,[__r2]
+    1202: 08       PUSH  A
+    1203: 51 EE    MOV   A,[__r3]
+    1205: 08       PUSH  A
+    1206: 7C 2E 93 LCALL _sqrtf
+*NODE:61:SW
+	1209: 38 FC    ADD   SP,0xFC
+    120B: 62 D0 00 MOV   REG[0xD0],0x0
+    120E: 51 F1    MOV   A,[__r0]
+    1210: 54 30    MOV   [X+48],A
+    1212: 51 F0    MOV   A,[__r1]
+    1214: 54 31    MOV   [X+49],A
+    1216: 51 EF    MOV   A,[__r2]
+    1218: 54 32    MOV   [X+50],A
+    121A: 51 EE    MOV   A,[__r3]
+    121C: 54 33    MOV   [X+51],A
+*NODE:62:SW
+	121E: 3D FB 00 CMP   [X-5],0x0
+    1221: B0 09    JNZ   0x122B
+    1223: 3D FC 01 CMP   [X-4],0x1
+    1226: B0 04    JNZ   0x122B
+*NODE:63:SW
+	1228: 37 30 80 XOR   [X+48],0x80
+*NODE:64:SW
+	122B: 62 D0 00 MOV   REG[0xD0],0x0
+    122E: 50 3F    MOV   A,0x3F
+    1230: 08       PUSH  A
+    1231: 50 80    MOV   A,0x80
+    1233: 08       PUSH  A
+    1234: 50 00    MOV   A,0x0
+    1236: 08       PUSH  A
+    1237: 08       PUSH  A
+    1238: 52 2C    MOV   A,[X+44]
+    123A: 08       PUSH  A
+    123B: 52 2D    MOV   A,[X+45]
+    123D: 08       PUSH  A
+    123E: 52 2E    MOV   A,[X+46]
+    1240: 08       PUSH  A
+    1241: 52 2F    MOV   A,[X+47]
+    1243: 08       PUSH  A
+    1244: 7C 1D 23 LCALL 0x1D23
+    1247: 18       POP   A
+    1248: 53 EE    MOV   [__r3],A
+    124A: 18       POP   A
+    124B: 53 EF    MOV   [__r2],A
+    124D: 18       POP   A
+    124E: 53 F0    MOV   [__r1],A
+    1250: 18       POP   A
+    1251: 53 F1    MOV   [__r0],A
+*NODE:65:SW
+	1253: 38 FC    ADD   SP,0xFC
+    1255: 50 40    MOV   A,0x40
+    1257: 08       PUSH  A
+    1258: 50 00    MOV   A,0x0
+    125A: 08       PUSH  A
+    125B: 08       PUSH  A
+    125C: 08       PUSH  A
+    125D: 51 F1    MOV   A,[__r0]
+    125F: 08       PUSH  A
+    1260: 51 F0    MOV   A,[__r1]
+    1262: 08       PUSH  A
+    1263: 51 EF    MOV   A,[__r2]
+    1265: 08       PUSH  A
+    1266: 51 EE    MOV   A,[__r3]
+    1268: 08       PUSH  A
+    1269: 7C 1E 80 LCALL 0x1E80
+    126C: 18       POP   A
+    126D: 53 EE    MOV   [__r3],A
+    126F: 18       POP   A
+    1270: 53 EF    MOV   [__r2],A
+    1272: 18       POP   A
+    1273: 53 F0    MOV   [__r1],A
+    1275: 18       POP   A
+*NODE:66:SW
+	1276: 38 FC    ADD   SP,0xFC
+    1278: 08       PUSH  A
+    1279: 51 F0    MOV   A,[__r1]
+    127B: 08       PUSH  A
+    127C: 51 EF    MOV   A,[__r2]
+    127E: 08       PUSH  A
+    127F: 51 EE    MOV   A,[__r3]
+    1281: 08       PUSH  A
+    1282: 7C 2E 93 LCALL _sqrtf
+*NODE:67:SW
+	1285: 38 FC    ADD   SP,0xFC
+    1287: 62 D0 00 MOV   REG[0xD0],0x0
+    128A: 51 F1    MOV   A,[__r0]
+    128C: 54 2C    MOV   [X+44],A
+    128E: 51 F0    MOV   A,[__r1]
+    1290: 54 2D    MOV   [X+45],A
+    1292: 51 EF    MOV   A,[__r2]
+    1294: 54 2E    MOV   [X+46],A
+    1296: 51 EE    MOV   A,[__r3]
+    1298: 54 2F    MOV   [X+47],A
+*NODE:68:SW
+	129A: 07 3B 01 ADD   [X+59],0x1
+    129D: 0F 3A 00 ADC   [X+58],0x0
+    12A0: 0F 39 00 ADC   [X+57],0x0
+    12A3: 0F 38 00 ADC   [X+56],0x0
+*NODE:69:SW
+	12A6: 52 3B    MOV   A,[X+59]
+    12A8: 13 FA    SUB   A,[X-6]
+    12AA: 52 3A    MOV   A,[X+58]
+    12AC: 1B F9    SBB   A,[X-7]
+    12AE: 52 39    MOV   A,[X+57]
+    12B0: 1B F8    SBB   A,[X-8]
+    12B2: 52 F7    MOV   A,[X-9]
+    12B4: 31 80    XOR   A,0x80
+    12B6: 62 D0 00 MOV   REG[0xD0],0x0
+    12B9: 53 E5    MOV   [__rX],A
+    12BB: 52 38    MOV   A,[X+56]
+    12BD: 31 80    XOR   A,0x80
+    12BF: 1A E5    SBB   A,[__rX]
+    12C1: C9 03    JC    0x0BC5
+*NODE:70:SW
+	12C3: 3D FB 00 CMP   [X-5],0x0
+    12C6: B1 7E    JNZ   0x1445
+    12C8: 3D FC 01 CMP   [X-4],0x1
+    12CB: B1 79    JNZ   0x1445
+*NODE:71:SW
+	12CD: 56 00 00 MOV   [X+0],0x0
+    12D0: 56 01 00 MOV   [X+1],0x0
+    12D3: 56 02 00 MOV   [X+2],0x0
+    12D6: 56 03 00 MOV   [X+3],0x0
+    12D9: 81 4E    JMP   0x1428
+*NODE:72:SW
+	12DB: 62 D0 00 MOV   REG[0xD0],0x0
+    12DE: 52 00    MOV   A,[X+0]
+    12E0: 53 F1    MOV   [__r0],A
+    12E2: 52 01    MOV   A,[X+1]
+    12E4: 53 F0    MOV   [__r1],A
+    12E6: 52 02    MOV   A,[X+2]
+    12E8: 53 EF    MOV   [__r2],A
+    12EA: 52 03    MOV   A,[X+3]
+    12EC: 53 EE    MOV   [__r3],A
+    12EE: 50 02    MOV   A,0x2
+    12F0: 62 D0 00 MOV   REG[0xD0],0x0
+    12F3: 65 EE    ASL   [__r3]
+    12F5: 6B EF    RLC   [__r2]
+    12F7: 6B F0    RLC   [__r1]
+    12F9: 6B F1    RLC   [__r0]
+    12FB: 78       DEC   A
+    12FC: BF F3    JNZ   0x12F0
+*NODE:73:SW
+	12FE: 51 EE    MOV   A,[__r3]
+    1300: 53 F0    MOV   [__r1],A
+    1302: 51 EF    MOV   A,[__r2]
+    1304: 53 F1    MOV   [__r0],A
+    1306: 52 F6    MOV   A,[X-10]
+    1308: 04 F0    ADD   [__r1],A
+    130A: 52 F5    MOV   A,[X-11]
+    130C: 0C F1    ADC   [__r0],A
+    130E: 52 1C    MOV   A,[X+28]
+    1310: 08       PUSH  A
+    1311: 52 1D    MOV   A,[X+29]
+    1313: 08       PUSH  A
+    1314: 52 1E    MOV   A,[X+30]
+    1316: 08       PUSH  A
+    1317: 52 1F    MOV   A,[X+31]
+    1319: 08       PUSH  A
+    131A: 7C 21 67 LCALL 0x2167
+    131D: 18       POP   A
+    131E: 53 EA    MOV   [__r7],A
+    1320: 18       POP   A
+    1321: 53 EB    MOV   [__r6],A
+    1323: 18       POP   A
+    1324: 53 EC    MOV   [__r5],A
+    1326: 18       POP   A
+    1327: 53 ED    MOV   [__r4],A
+    1329: 51 F1    MOV   A,[__r0]
+*NODE:74:SW
+	132B: 60 D4    MOV   REG[0xD4],A
+    132D: 3E F0    MVI   A,[__r1]
+    132F: 53 E9    MOV   [__r8],A
+    1331: 3E F0    MVI   A,[__r1]
+    1333: 53 E8    MOV   [__r9],A
+    1335: 3E F0    MVI   A,[__r1]
+    1337: 53 E7    MOV   [__r10],A
+    1339: 3E F0    MVI   A,[__r1]
+    133B: 16 F0 04 SUB   [__r1],0x4
+    133E: 53 E6    MOV   [__r11],A
+    1340: 51 ED    MOV   A,[__r4]
+    1342: 08       PUSH  A
+    1343: 51 EC    MOV   A,[__r5]
+    1345: 08       PUSH  A
+    1346: 51 EB    MOV   A,[__r6]
+    1348: 08       PUSH  A
+    1349: 51 EA    MOV   A,[__r7]
+    134B: 08       PUSH  A
+    134C: 51 E9    MOV   A,[__r8]
+    134E: 08       PUSH  A
+    134F: 51 E8    MOV   A,[__r9]
+    1351: 08       PUSH  A
+    1352: 51 E7    MOV   A,[__r10]
+    1354: 08       PUSH  A
+    1355: 51 E6    MOV   A,[__r11]
+    1357: 08       PUSH  A
+    1358: 7C 1E 80 LCALL 0x1E80
+    135B: 18       POP   A
+    135C: 53 EA    MOV   [__r7],A
+    135E: 18       POP   A
+    135F: 53 EB    MOV   [__r6],A
+    1361: 18       POP   A
+    1362: 53 EC    MOV   [__r5],A
+    1364: 18       POP   A
+    1365: 53 ED    MOV   [__r4],A
+*NODE:75:SW
+	1367: 38 FC    ADD   SP,0xFC
+    1369: 51 F1    MOV   A,[__r0]
+    136B: 60 D5    MOV   REG[0xD5],A
+    136D: 51 ED    MOV   A,[__r4]
+    136F: 3F F0    MVI   [__r1],A
+    1371: 51 EC    MOV   A,[__r5]
+    1373: 3F F0    MVI   [__r1],A
+    1375: 51 EB    MOV   A,[__r6]
+    1377: 3F F0    MVI   [__r1],A
+    1379: 51 EA    MOV   A,[__r7]
+    137B: 3F F0    MVI   [__r1],A
+*NODE:76:SW
+	137D: 52 00    MOV   A,[X+0]
+    137F: 53 F1    MOV   [__r0],A
+    1381: 52 01    MOV   A,[X+1]
+    1383: 53 F0    MOV   [__r1],A
+    1385: 52 02    MOV   A,[X+2]
+    1387: 53 EF    MOV   [__r2],A
+    1389: 52 03    MOV   A,[X+3]
+    138B: 53 EE    MOV   [__r3],A
+    138D: 50 02    MOV   A,0x2
+    138F: 62 D0 00 MOV   REG[0xD0],0x0
+    1392: 65 EE    ASL   [__r3]
+    1394: 6B EF    RLC   [__r2]
+    1396: 6B F0    RLC   [__r1]
+    1398: 6B F1    RLC   [__r0]
+    139A: 78       DEC   A
+    139B: BF F3    JNZ   0x138F
+*NODE:77:SW
+	139D: 51 EE    MOV   A,[__r3]
+    139F: 53 F0    MOV   [__r1],A
+    13A1: 51 EF    MOV   A,[__r2]
+    13A3: 53 F1    MOV   [__r0],A
+    13A5: 52 F4    MOV   A,[X-12]
+    13A7: 04 F0    ADD   [__r1],A
+    13A9: 52 F3    MOV   A,[X-13]
+    13AB: 0C F1    ADC   [__r0],A
+    13AD: 52 1C    MOV   A,[X+28]
+    13AF: 08       PUSH  A
+    13B0: 52 1D    MOV   A,[X+29]
+    13B2: 08       PUSH  A
+    13B3: 52 1E    MOV   A,[X+30]
+    13B5: 08       PUSH  A
+    13B6: 52 1F    MOV   A,[X+31]
+    13B8: 08       PUSH  A
+    13B9: 7C 21 67 LCALL 0x2167
+    13BC: 18       POP   A
+    13BD: 53 EA    MOV   [__r7],A
+    13BF: 18       POP   A
+    13C0: 53 EB    MOV   [__r6],A
+    13C2: 18       POP   A
+    13C3: 53 EC    MOV   [__r5],A
+    13C5: 18       POP   A
+    13C6: 53 ED    MOV   [__r4],A
+    13C8: 51 F1    MOV   A,[__r0]
+*NODE:78:SW
+	13CA: 60 D4    MOV   REG[0xD4],A
+    13CC: 3E F0    MVI   A,[__r1]
+    13CE: 53 E9    MOV   [__r8],A
+    13D0: 3E F0    MVI   A,[__r1]
+    13D2: 53 E8    MOV   [__r9],A
+    13D4: 3E F0    MVI   A,[__r1]
+    13D6: 53 E7    MOV   [__r10],A
+    13D8: 3E F0    MVI   A,[__r1]
+    13DA: 16 F0 04 SUB   [__r1],0x4
+    13DD: 53 E6    MOV   [__r11],A
+    13DF: 51 ED    MOV   A,[__r4]
+    13E1: 08       PUSH  A
+    13E2: 51 EC    MOV   A,[__r5]
+    13E4: 08       PUSH  A
+    13E5: 51 EB    MOV   A,[__r6]
+    13E7: 08       PUSH  A
+    13E8: 51 EA    MOV   A,[__r7]
+    13EA: 08       PUSH  A
+    13EB: 51 E9    MOV   A,[__r8]
+    13ED: 08       PUSH  A
+    13EE: 51 E8    MOV   A,[__r9]
+    13F0: 08       PUSH  A
+    13F1: 51 E7    MOV   A,[__r10]
+    13F3: 08       PUSH  A
+    13F4: 51 E6    MOV   A,[__r11]
+    13F6: 08       PUSH  A
+    13F7: 7C 1E 80 LCALL 0x1E80
+    13FA: 18       POP   A
+    13FB: 53 EA    MOV   [__r7],A
+    13FD: 18       POP   A
+    13FE: 53 EB    MOV   [__r6],A
+    1400: 18       POP   A
+    1401: 53 EC    MOV   [__r5],A
+    1403: 18       POP   A
+    1404: 53 ED    MOV   [__r4],A
+*NODE:79:SW
+	1406: 38 FC    ADD   SP,0xFC
+    1408: 51 F1    MOV   A,[__r0]
+    140A: 60 D5    MOV   REG[0xD5],A
+    140C: 51 ED    MOV   A,[__r4]
+    140E: 3F F0    MVI   [__r1],A
+    1410: 51 EC    MOV   A,[__r5]
+    1412: 3F F0    MVI   [__r1],A
+    1414: 51 EB    MOV   A,[__r6]
+    1416: 3F F0    MVI   [__r1],A
+    1418: 51 EA    MOV   A,[__r7]
+    141A: 3F F0    MVI   [__r1],A
+*NODE:80:SW
+	141C: 07 03 01 ADD   [X+3],0x1
+    141F: 0F 02 00 ADC   [X+2],0x0
+    1422: 0F 01 00 ADC   [X+1],0x0
+    1425: 0F 00 00 ADC   [X+0],0x0
+*NODE:81:SW
+	1428: 52 03    MOV   A,[X+3]
+    142A: 13 1F    SUB   A,[X+31]
+    142C: 52 02    MOV   A,[X+2]
+    142E: 1B 1E    SBB   A,[X+30]
+    1430: 52 01    MOV   A,[X+1]
+    1432: 1B 1D    SBB   A,[X+29]
+    1434: 52 1C    MOV   A,[X+28]
+    1436: 31 80    XOR   A,0x80
+    1438: 62 D0 00 MOV   REG[0xD0],0x0
+    143B: 53 E5    MOV   [__rX],A
+    143D: 52 00    MOV   A,[X+0]
+    143F: 31 80    XOR   A,0x80
+    1441: 1A E5    SBB   A,[__rX]
+    1443: CE 97    JC    0x12DB
+*NODE:82:SW
+	1445: 56 00 00 MOV   [X+0],0x0
+    1448: 56 01 00 MOV   [X+1],0x0
+    144B: 56 02 00 MOV   [X+2],0x0
+    144E: 56 03 00 MOV   [X+3],0x0
+*NODE:83:SW
+	1451: 62 D0 00 MOV   REG[0xD0],0x0
+*NODE:84:SW
+	1588: 07 03 01 ADD   [X+3],0x1
+    158B: 0F 02 00 ADC   [X+2],0x0
+    158E: 0F 01 00 ADC   [X+1],0x0
+    1591: 0F 00 00 ADC   [X+0],0x0
+    1594: 52 03    MOV   A,[X+3]
+*NODE:85:SW
+	15AC: 10       PUSH  X
+    15AD: 4F       MOV   X,SP
+    15AE: 38 06    ADD   SP,0x6
+*NODE:86:SW
+	15B0: 10       PUSH  X
+    15B1: 7C 04 98 LCALL _LCD_1_Start|_LCD_1_Init|LCD_1_Start|LCD_1_Init
+    15B4: 20       POP   X
+*NODE:87:SW
+	15B5: 62 D0 05 MOV   REG[0xD0],0x5
+    15B8: 55 4A 00 MOV   [j+1],0x0
+    15BB: 55 49 00 MOV   [j],0x0
+*NODE:88:SW
+	15BE: 62 D0 05 MOV   REG[0xD0],0x5
+    15C1: 55 50 00 MOV   [k+1],0x0
+    15C4: 55 4F 00 MOV   [k],0x0
+    15C7: 84 49    JMP   0x1A11
+*NODE:89:SW
+	15C9: 62 D0 05 MOV   REG[0xD0],0x5
+*NODE:90:SW
+	177E: 62 D0 05 MOV   REG[0xD0],0x5
+*NODE:91:SW
+	1933: 62 D0 05 MOV   REG[0xD0],0x5
+    1936: 51 50    MOV   A,[k+1]
+    1938: 08       PUSH  A
+    1939: 51 4F    MOV   A,[k]
+    193B: 62 D0 05 MOV   REG[0xD0],0x5
+    193E: 53 2E    MOV   [__r0],A
+    1940: 18       POP   A
+    1941: 53 2D    MOV   [__r1],A
+    1943: 65 2D    ASL   [__r1]
+    1945: 6B 2E    RLC   [__r0]
+    1947: 65 2D    ASL   [__r1]
+    1949: 6B 2E    RLC   [__r0]
+    194B: 06 2D A3 ADD   [__r1],0xA3
+    194E: 0E 2E 00 ADC   [__r0],0x0
+    1951: 51 2E    MOV   A,[__r0]
+*NODE:92:SW
+	1953: 60 D4    MOV   REG[0xD4],A
+    1955: 3E 2D    MVI   A,[__r1]
+    1957: 53 2A    MOV   [__r4],A
+    1959: 3E 2D    MVI   A,[__r1]
+    195B: 53 29    MOV   [__r5],A
+    195D: 3E 2D    MVI   A,[__r1]
+    195F: 53 28    MOV   [__r6],A
+    1961: 3E 2D    MVI   A,[__r1]
+    1963: 53 27    MOV   [__r7],A
+*NODE:93:SW
+	1965: 62 D0 05 MOV   REG[0xD0],0x5
+    1968: 51 50    MOV   A,[k+1]
+    196A: 08       PUSH  A
+    196B: 51 4F    MOV   A,[k]
+    196D: 62 D0 05 MOV   REG[0xD0],0x5
+    1970: 53 2E    MOV   [__r0],A
+    1972: 18       POP   A
+    1973: 53 2D    MOV   [__r1],A
+    1975: 65 2D    ASL   [__r1]
+    1977: 6B 2E    RLC   [__r0]
+    1979: 65 2D    ASL   [__r1]
+    197B: 6B 2E    RLC   [__r0]
+    197D: 65 2D    ASL   [__r1]
+    197F: 6B 2E    RLC   [__r0]
+    1981: 06 2D 00 ADD   [__r1],0x0
+    1984: 0E 2E 04 ADC   [__r0],0x4
+    1987: 51 2E    MOV   A,[__r0]
+*NODE:94:SW
+	 1989: 60 D5    MOV   REG[0xD5],A
+    198B: 51 2A    MOV   A,[__r4]
+    198D: 3F 2D    MVI   [__r1],A
+    198F: 51 29    MOV   A,[__r5]
+    1991: 3F 2D    MVI   [__r1],A
+    1993: 51 28    MOV   A,[__r6]
+    1995: 3F 2D    MVI   [__r1],A
+    1997: 51 27    MOV   A,[__r7]
+    1999: 3F 2D    MVI   [__r1],A
+*NODE:95:SW
+	199B: 62 D0 05 MOV   REG[0xD0],0x5
+    199E: 51 50    MOV   A,[k+1]
+    19A0: 08       PUSH  A
+    19A1: 51 4F    MOV   A,[k]
+    19A3: 62 D0 05 MOV   REG[0xD0],0x5
+    19A6: 53 2E    MOV   [__r0],A
+    19A8: 18       POP   A
+    19A9: 53 2D    MOV   [__r1],A
+    19AB: 65 2D    ASL   [__r1]
+    19AD: 6B 2E    RLC   [__r0]
+    19AF: 65 2D    ASL   [__r1]
+    19B1: 6B 2E    RLC   [__r0]
+    19B3: 06 2D 83 ADD   [__r1],0x83
+    19B6: 0E 2E 00 ADC   [__r0],0x0
+    19B9: 51 2E    MOV   A,[__r0]
+*NODE:96:SW
+	19BB: 60 D4    MOV   REG[0xD4],A
+    19BD: 3E 2D    MVI   A,[__r1]
+    19BF: 53 2A    MOV   [__r4],A
+    19C1: 3E 2D    MVI   A,[__r1]
+    19C3: 53 29    MOV   [__r5],A
+    19C5: 3E 2D    MVI   A,[__r1]
+    19C7: 53 28    MOV   [__r6],A
+    19C9: 3E 2D    MVI   A,[__r1]
+    19CB: 53 27    MOV   [__r7],A
+*NODE:97:SW
+	19CD: 62 D0 05 MOV   REG[0xD0],0x5
+    19D0: 51 50    MOV   A,[k+1]
+    19D2: 08       PUSH  A
+    19D3: 51 4F    MOV   A,[k]
+    19D5: 62 D0 05 MOV   REG[0xD0],0x5
+    19D8: 53 2E    MOV   [__r0],A
+    19DA: 18       POP   A
+    19DB: 53 2D    MOV   [__r1],A
+    19DD: 65 2D    ASL   [__r1]
+    19DF: 6B 2E    RLC   [__r0]
+    19E1: 06 2D 01 ADD   [__r1],0x1
+    19E4: 0E 2E 00 ADC   [__r0],0x0
+    19E7: 65 2D    ASL   [__r1]
+    19E9: 6B 2E    RLC   [__r0]
+    19EB: 65 2D    ASL   [__r1]
+    19ED: 6B 2E    RLC   [__r0]
+    19EF: 06 2D 00 ADD   [__r1],0x0
+    19F2: 0E 2E 04 ADC   [__r0],0x4
+    19F5: 51 2E    MOV   A,[__r0]
+*NODE:98:SW
+	19F7: 60 D5    MOV   REG[0xD5],A
+    19F9: 51 2A    MOV   A,[__r4]
+    19FB: 3F 2D    MVI   [__r1],A
+    19FD: 51 29    MOV   A,[__r5]
+    19FF: 3F 2D    MVI   [__r1],A
+    1A01: 51 28    MOV   A,[__r6]
+    1A03: 3F 2D    MVI   [__r1],A
+    1A05: 51 27    MOV   A,[__r7]
+    1A07: 3F 2D    MVI   [__r1],A
+*NODE:99:SW
+	1A09: 62 D0 05 MOV   REG[0xD0],0x5
+    1A0C: 76 50    INC   [k+1]
+    1A0E: 0E 4F 00 ADC   [k],0x0
+    1A11: 62 D0 05 MOV   REG[0xD0],0x5
+    1A14: 51 50    MOV   A,[k+1]
+    1A16: 11 08    SUB   A,0x8
+    1A18: 51 4F    MOV   A,[k]
+    1A1A: 19 00    SBB   A,0x0
+    1A1C: CB AC    JC    0x15C9
+*NODE:100:SW
+	1A1E: 62 D0 05 MOV   REG[0xD0],0x5
+    1A21: 51 4A    MOV   A,[j+1]
+    1A23: 01 A0    ADD   A,0xA0
+    1A25: 62 D0 05 MOV   REG[0xD0],0x5
+    1A28: 53 2D    MOV   [__r1],A
+    1A2A: 62 D0 05 MOV   REG[0xD0],0x5
+    1A2D: 51 49    MOV   A,[j]
+    1A2F: 09 01    ADC   A,0x1
+    1A31: 62 D0 05 MOV   REG[0xD0],0x5
+    1A34: 53 2E    MOV   [__r0],A
+    1A36: 51 2D    MOV   A,[__r1]
+    1A38: 08       PUSH  A
+    1A39: 51 2E    MOV   A,[__r0]
+    1A3B: 62 D0 05 MOV   REG[0xD0],0x5
+    1A3E: 53 2F    MOV   [FlashParams],A
+    1A40: 18       POP   A
+    1A41: 53 30    MOV   [FlashParams+1],A
+*NODE:101:SW
+	1A43: 55 32 00 MOV   [FlashParams+3],0x0
+    1A46: 55 31 04 MOV   [FlashParams+2],0x4
+*NODE:102:SW
+	1A49: 55 33 19 MOV   [FlashParams+4],0x19
+*NODE:103:SW
+	1A4C: 10       PUSH  X
+    1A4D: 50 05    MOV   A,0x5
+    1A4F: 08       PUSH  A
+    1A50: 50 2F    MOV   A,0x2F
+    1A52: 5C       MOV   X,A
+    1A53: 18       POP   A
+    1A54: 7C 06 16 LCALL _bFlashWriteBlock
+    1A57: 20       POP   X
+*NODE:104:SW
+	1A58: 62 D0 05 MOV   REG[0xD0],0x5
+    1A5B: 54 00    MOV   [X+0],A
+*NODE:105:SW
+	1A5D: 62 D0 05 MOV   REG[0xD0],0x5
+    1A60: 76 4A    INC   [j+1]
+    1A62: 0E 49 00 ADC   [j],0x0
+    1A65: 51 4A    MOV   A,[j+1]
+    1A67: 11 20    SUB   A,0x20
+    1A69: 51 49    MOV   A,[j]
+    1A6B: 31 80    XOR   A,0x80
+    1A6D: 19 80    SBB   A,0x80
+    1A6F: CB 4E    JC    0x15BE
+*NODE:106:SW
+	1A71: 62 D0 05 MOV   REG[0xD0],0x5
+    1A74: 55 48 00 MOV   [z+1],0x0
+    1A77: 55 47 00 MOV   [z],0x0
+*NODE:107:SW
+	1A7A: 3D 00 00 CMP   [X+0],0x0
+    1A7D: A0 40    JZ    0x1ABE
+*NODE:108:SW
+	1A7F: 71 01    OR    F,0x1
+*NODE:109:SW
+	1A81: 62 D0 05 MOV   REG[0xD0],0x5
+    1A84: 51 48    MOV   A,[z+1]
+    1A86: 01 A0    ADD   A,0xA0
+    1A88: 62 D0 05 MOV   REG[0xD0],0x5
+    1A8B: 53 2D    MOV   [__r1],A
+    1A8D: 62 D0 05 MOV   REG[0xD0],0x5
+    1A90: 51 47    MOV   A,[z]
+    1A92: 09 01    ADC   A,0x1
+    1A94: 62 D0 05 MOV   REG[0xD0],0x5
+    1A97: 53 2E    MOV   [__r0],A
+    1A99: 51 2D    MOV   A,[__r1]
+    1A9B: 08       PUSH  A
+    1A9C: 51 2E    MOV   A,[__r0]
+    1A9E: 62 D0 05 MOV   REG[0xD0],0x5
+    1AA1: 53 2F    MOV   [FlashParams],A
+    1AA3: 18       POP   A
+    1AA4: 53 30    MOV   [FlashParams+1],A
+*NODE:110:SW
+	1AA6: 55 32 00 MOV   [FlashParams+3],0x0
+    1AA9: 55 31 01 MOV   [FlashParams+2],0x1
+*NODE:111:SW
+	1AAC: 55 34 40 MOV   [FlashParams+5],0x40
+    1AAF: 55 33 00 MOV   [FlashParams+4],0x0
+*NODE:112:SW
+	1AB2: 10       PUSH  X
+    1AB3: 50 05    MOV   A,0x5
+    1AB5: 08       PUSH  A
+    1AB6: 50 2F    MOV   A,0x2F
+    1AB8: 5C       MOV   X,A
+    1AB9: 18       POP   A
+    1ABA: 7C 07 BC LCALL _FlashReadBlock
+    1ABD: 20       POP   X
+*NODE:113:SW
+	1ABE: 62 D0 05 MOV   REG[0xD0],0x5
+    1AC1: 55 50 00 MOV   [k+1],0x0
+    1AC4: 55 4F 00 MOV   [k],0x0
+    1AC7: 80 DF    JMP   0x1BA7
+*NODE:114:SW
+	1AC9: 62 D0 05 MOV   REG[0xD0],0x5
+    1ACC: 51 50    MOV   A,[k+1]
+    1ACE: 08       PUSH  A
+    1ACF: 51 4F    MOV   A,[k]
+    1AD1: 62 D0 05 MOV   REG[0xD0],0x5
+    1AD4: 53 2E    MOV   [__r0],A
+    1AD6: 18       POP   A
+    1AD7: 53 2D    MOV   [__r1],A
+    1AD9: 65 2D    ASL   [__r1]
+    1ADB: 6B 2E    RLC   [__r0]
+    1ADD: 65 2D    ASL   [__r1]
+    1ADF: 6B 2E    RLC   [__r0]
+    1AE1: 65 2D    ASL   [__r1]
+    1AE3: 6B 2E    RLC   [__r0]
+    1AE5: 06 2D 00 ADD   [__r1],0x0
+    1AE8: 0E 2E 01 ADC   [__r0],0x1
+    1AEB: 51 2E    MOV   A,[__r0]
+*NODE:115:SW
+	1AED: 60 D4    MOV   REG[0xD4],A
+    1AEF: 3E 2D    MVI   A,[__r1]
+    1AF1: 53 2A    MOV   [__r4],A
+    1AF3: 3E 2D    MVI   A,[__r1]
+    1AF5: 53 29    MOV   [__r5],A
+    1AF7: 3E 2D    MVI   A,[__r1]
+    1AF9: 53 28    MOV   [__r6],A
+    1AFB: 3E 2D    MVI   A,[__r1]
+    1AFD: 53 27    MOV   [__r7],A
+*NODE:116:SW
+	1AFF: 62 D0 05 MOV   REG[0xD0],0x5
+    1B02: 51 50    MOV   A,[k+1]
+    1B04: 08       PUSH  A
+    1B05: 51 4F    MOV   A,[k]
+    1B07: 62 D0 05 MOV   REG[0xD0],0x5
+    1B0A: 53 2E    MOV   [__r0],A
+    1B0C: 18       POP   A
+    1B0D: 53 2D    MOV   [__r1],A
+    1B0F: 65 2D    ASL   [__r1]
+    1B11: 6B 2E    RLC   [__r0]
+    1B13: 65 2D    ASL   [__r1]
+    1B15: 6B 2E    RLC   [__r0]
+    1B17: 06 2D 23 ADD   [__r1],0x23
+    1B1A: 0E 2E 00 ADC   [__r0],0x0
+    1B1D: 51 2E    MOV   A,[__r0]
+*NODE:117:SW
+	1B1F: 60 D5    MOV   REG[0xD5],A
+    1B21: 51 2A    MOV   A,[__r4]
+    1B23: 3F 2D    MVI   [__r1],A
+    1B25: 51 29    MOV   A,[__r5]
+    1B27: 3F 2D    MVI   [__r1],A
+    1B29: 51 28    MOV   A,[__r6]
+    1B2B: 3F 2D    MVI   [__r1],A
+    1B2D: 51 27    MOV   A,[__r7]
+    1B2F: 3F 2D    MVI   [__r1],A
+*NODE:118:SW
+	1B31: 62 D0 05 MOV   REG[0xD0],0x5
+    1B34: 51 50    MOV   A,[k+1]
+    1B36: 08       PUSH  A
+    1B37: 51 4F    MOV   A,[k]
+    1B39: 62 D0 05 MOV   REG[0xD0],0x5
+    1B3C: 53 2E    MOV   [__r0],A
+    1B3E: 18       POP   A
+    1B3F: 53 2D    MOV   [__r1],A
+    1B41: 65 2D    ASL   [__r1]
+    1B43: 6B 2E    RLC   [__r0]
+    1B45: 06 2D 01 ADD   [__r1],0x1
+    1B48: 0E 2E 00 ADC   [__r0],0x0
+    1B4B: 65 2D    ASL   [__r1]
+    1B4D: 6B 2E    RLC   [__r0]
+    1B4F: 65 2D    ASL   [__r1]
+    1B51: 6B 2E    RLC   [__r0]
+    1B53: 06 2D 00 ADD   [__r1],0x0
+    1B56: 0E 2E 01 ADC   [__r0],0x1
+    1B59: 51 2E    MOV   A,[__r0]
+*NODE:119:SW
+	1B5B: 60 D4    MOV   REG[0xD4],A
+    1B5D: 3E 2D    MVI   A,[__r1]
+    1B5F: 53 2A    MOV   [__r4],A
+    1B61: 3E 2D    MVI   A,[__r1]
+    1B63: 53 29    MOV   [__r5],A
+    1B65: 3E 2D    MVI   A,[__r1]
+    1B67: 53 28    MOV   [__r6],A
+    1B69: 3E 2D    MVI   A,[__r1]
+    1B6B: 53 27    MOV   [__r7],A
+*NODE:120:SW
+	1B6D: 62 D0 05 MOV   REG[0xD0],0x5
+    1B70: 51 50    MOV   A,[k+1]
+    1B72: 08       PUSH  A
+    1B73: 51 4F    MOV   A,[k]
+    1B75: 62 D0 05 MOV   REG[0xD0],0x5
+    1B78: 53 2E    MOV   [__r0],A
+    1B7A: 18       POP   A
+    1B7B: 53 2D    MOV   [__r1],A
+    1B7D: 65 2D    ASL   [__r1]
+    1B7F: 6B 2E    RLC   [__r0]
+    1B81: 65 2D    ASL   [__r1]
+    1B83: 6B 2E    RLC   [__r0]
+    1B85: 06 2D 03 ADD   [__r1],0x3
+    1B88: 0E 2E 00 ADC   [__r0],0x0
+    1B8B: 51 2E    MOV   A,[__r0]
+*NODE:121:SW
+	1B8D: 60 D5    MOV   REG[0xD5],A
+    1B8F: 51 2A    MOV   A,[__r4]
+    1B91: 3F 2D    MVI   [__r1],A
+    1B93: 51 29    MOV   A,[__r5]
+    1B95: 3F 2D    MVI   [__r1],A
+    1B97: 51 28    MOV   A,[__r6]
+    1B99: 3F 2D    MVI   [__r1],A
+    1B9B: 51 27    MOV   A,[__r7]
+    1B9D: 3F 2D    MVI   [__r1],A
+*NODE:122:SW
+	1B9F: 62 D0 05 MOV   REG[0xD0],0x5
+    1BA2: 76 50    INC   [k+1]
+    1BA4: 0E 4F 00 ADC   [k],0x0
+    1BA7: 62 D0 05 MOV   REG[0xD0],0x5
+    1BAA: 51 50    MOV   A,[k+1]
+    1BAC: 11 08    SUB   A,0x8
+    1BAE: 51 4F    MOV   A,[k]
+    1BB0: 19 00    SBB   A,0x0
+    1BB2: CF 16    JC    0x1AC9
+*NODE:123:SW
+	1BB4: 10       PUSH  X
+    1BB5: 50 00    MOV   A,0x0
+    1BB7: 57 00    MOV   X,0x0
+    1BB9: 7C 05 0B LCALL _LCD_1_Position
+    1BBC: 20       POP   X
+*NODE:124:SW
+	1BBD: 50 05    MOV   A,0x5
+    1BBF: 08       PUSH  A
+    1BC0: 50 45    MOV   A,0x45
+    1BC2: 08       PUSH  A
+*NODE:125:SW
+	1BC3: 62 D0 00 MOV   REG[0xD0],0x0
+    1BC6: 51 37    MOV   A,[data_re+20]
+    1BC8: 08       PUSH  A
+    1BC9: 51 38    MOV   A,[data_re+21]
+    1BCB: 08       PUSH  A
+    1BCC: 51 39    MOV   A,[data_re+22]
+    1BCE: 08       PUSH  A
+    1BCF: 51 3A    MOV   A,[data_re+23]
+    1BD1: 08       PUSH  A
+    1BD2: 7C 28 B6 LCALL _ftoa
+*NODE:126:SW
+	1BD5: 38 FA    ADD   SP,0xFA
+    1BD7: 62 D0 05 MOV   REG[0xD0],0x5
+    1BDA: 51 2D    MOV   A,[__r1]
+    1BDC: 08       PUSH  A
+    1BDD: 51 2E    MOV   A,[__r0]
+    1BDF: 62 D0 05 MOV   REG[0xD0],0x5
+    1BE2: 53 3F    MOV   [data_read],A
+    1BE4: 18       POP   A
+    1BE5: 53 40    MOV   [data_read+1],A
+*NODE:127:SW
+	1BE7: 10       PUSH  X
+    1BE8: 51 3F    MOV   A,[data_read]
+    1BEA: 08       PUSH  A
+    1BEB: 51 40    MOV   A,[data_read+1]
+    1BED: 5C       MOV   X,A
+    1BEE: 18       POP   A
+    1BEF: 7C 03 C2 LCALL _LCD_1_PrString
+    1BF2: 20       POP   X
+*NODE:128:SW
+	1BF3: 62 D0 05 MOV   REG[0xD0],0x5
+    1BF6: 55 4C 00 MOV   [p+1],0x0
+    1BF9: 55 4B 00 MOV   [p],0x0
+*NODE:129:SW
+	 1BFC: 50 41    MOV   A,0x41
+    1BFE: 08       PUSH  A
+    1BFF: 50 00    MOV   A,0x0
+    1C01: 08       PUSH  A
+    1C02: 08       PUSH  A
+    1C03: 08       PUSH  A
+    1C04: 7C 2F 5D LCALL _logf
+*NODE:130:SW
+	1C07: 62 D0 05 MOV   REG[0xD0],0x5
+    1C0A: 51 2E    MOV   A,[__r0]
+    1C0C: 54 02    MOV   [X+2],A
+    1C0E: 51 2D    MOV   A,[__r1]
+    1C10: 54 03    MOV   [X+3],A
+    1C12: 51 2C    MOV   A,[__r2]
+    1C14: 54 04    MOV   [X+4],A
+    1C16: 51 2B    MOV   A,[__r3]
+    1C18: 54 05    MOV   [X+5],A
+    1C1A: 50 40    MOV   A,0x40
+    1C1C: 08       PUSH  A
+    1C1D: 50 00    MOV   A,0x0
+    1C1F: 08       PUSH  A
+    1C20: 08       PUSH  A
+    1C21: 08       PUSH  A
+    1C22: 7C 2F 5D LCALL _logf
+*NODE:131:SW
+	1C25: 38 F8    ADD   SP,0xF8
+    1C27: 50 00    MOV   A,0x0
+    1C29: 08       PUSH  A
+    1C2A: 50 03    MOV   A,0x3
+    1C2C: 08       PUSH  A
+    1C2D: 50 00    MOV   A,0x0
+    1C2F: 08       PUSH  A
+    1C30: 50 23    MOV   A,0x23
+    1C32: 08       PUSH  A
+*NODE:132:SW
+	1C33: 62 D0 05 MOV   REG[0xD0],0x5
+    1C36: 51 2E    MOV   A,[__r0]
+    1C38: 08       PUSH  A
+    1C39: 51 2D    MOV   A,[__r1]
+    1C3B: 08       PUSH  A
+    1C3C: 51 2C    MOV   A,[__r2]
+    1C3E: 08       PUSH  A
+    1C3F: 51 2B    MOV   A,[__r3]
+    1C41: 08       PUSH  A
+    1C42: 52 02    MOV   A,[X+2]
+    1C44: 08       PUSH  A
+    1C45: 52 03    MOV   A,[X+3]
+    1C47: 08       PUSH  A
+    1C48: 52 04    MOV   A,[X+4]
+    1C4A: 08       PUSH  A
+    1C4B: 52 05    MOV   A,[X+5]
+    1C4D: 08       PUSH  A
+    1C4E: 7C 22 EB LCALL 0x22EB
+*NODE:133:SW
+	1C51: 18       POP   A
+    1C52: 53 2B    MOV   [__r3],A
+    1C54: 18       POP   A
+    1C55: 53 2C    MOV   [__r2],A
+    1C57: 18       POP   A
+    1C58: 53 2D    MOV   [__r1],A
+    1C5A: 18       POP   A
+    1C5B: 38 FC    ADD   SP,0xFC
+    1C5D: 08       PUSH  A
+    1C5E: 51 2D    MOV   A,[__r1]
+    1C60: 08       PUSH  A
+    1C61: 51 2C    MOV   A,[__r2]
+    1C63: 08       PUSH  A
+    1C64: 51 2B    MOV   A,[__r3]
+    1C66: 08       PUSH  A
+    1C67: 7C 20 7D LCALL 0x207D
+*NODE:134:SW
+	1C6A: 18       POP   A
+    1C6B: 53 2B    MOV   [__r3],A
+    1C6D: 18       POP   A
+    1C6E: 53 2C    MOV   [__r2],A
+    1C70: 18       POP   A
+    1C71: 53 2D    MOV   [__r1],A
+    1C73: 18       POP   A
+    1C74: 08       PUSH  A
+    1C75: 51 2D    MOV   A,[__r1]
+    1C77: 08       PUSH  A
+    1C78: 51 2C    MOV   A,[__r2]
+    1C7A: 08       PUSH  A
+    1C7B: 51 2B    MOV   A,[__r3]
+    1C7D: 08       PUSH  A
+    1C7E: 50 00    MOV   A,0x0
+    1C80: 08       PUSH  A
+    1C81: 50 01    MOV   A,0x1
+    1C83: 08       PUSH  A
+    1C84: 7C 08 27 LCALL __UserModules_end|__text_start|_FFT|_FFT
+    1C87: 38 F6    ADD   SP,0xF6
+*NODE:135:SW
+	1C89: 62 D0 05 MOV   REG[0xD0],0x5
+    1C8C: 76 4C    INC   [p+1]
+    1C8E: 0E 4B 00 ADC   [p],0x0
+    1C91: 51 4C    MOV   A,[p+1]
+    1C93: 11 08    SUB   A,0x8
+    1C95: 51 4B    MOV   A,[p]
+    1C97: 31 80    XOR   A,0x80
+    1C99: 19 80    SBB   A,0x80
+    1C9B: CF 60    JC    0x1BFC
+*NODE:136:SW
+	1C9D: 10       PUSH  X
+    1C9E: 50 00    MOV   A,0x0
+    1CA0: 57 00    MOV   X,0x0
+    1CA2: 7C 05 0B LCALL _LCD_1_Position
+    1CA5: 20       POP   X
+*NODE:137:SW
+	1CA6: 50 05    MOV   A,0x5
+    1CA8: 08       PUSH  A
+    1CA9: 50 45    MOV   A,0x45
+    1CAB: 08       PUSH  A
+    1CAC: 62 D0 00 MOV   REG[0xD0],0x0
+    1CAF: 51 37    MOV   A,[data_re+20]
+    1CB1: 08       PUSH  A
+    1CB2: 51 38    MOV   A,[data_re+21]
+    1CB4: 08       PUSH  A
+    1CB5: 51 39    MOV   A,[data_re+22]
+    1CB7: 08       PUSH  A
+    1CB8: 51 3A    MOV   A,[data_re+23]
+    1CBA: 08       PUSH  A
+    1CBB: 7C 28 B6 LCALL _ftoa
+    1CBE: 38 FA    ADD   SP,0xFA
+*NODE:138:SW
+	1CC0: 62 D0 05 MOV   REG[0xD0],0x5
+    1CC3: 51 2D    MOV   A,[__r1]
+    1CC5: 08       PUSH  A
+    1CC6: 51 2E    MOV   A,[__r0]
+    1CC8: 62 D0 05 MOV   REG[0xD0],0x5
+    1CCB: 53 3F    MOV   [data_read],A
+    1CCD: 18       POP   A
+    1CCE: 53 40    MOV   [data_read+1],A
+*NODE:139:SW
+	1CD0: 10       PUSH  X
+    1CD1: 51 3F    MOV   A,[data_read]
+    1CD3: 08       PUSH  A
+    1CD4: 51 40    MOV   A,[data_read+1]
+    1CD6: 5C       MOV   X,A
+    1CD7: 18       POP   A
+    1CD8: 7C 03 C2 LCALL _LCD_1_PrString
+    1CDB: 20       POP   X
+*NODE:140:SW
+	1CDC: 62 D0 05 MOV   REG[0xD0],0x5
+    1CDF: 55 50 00 MOV   [k+1],0x0
+    1CE2: 55 4F 00 MOV   [k],0x0
+    1CE5: 80 DF    JMP   0x1DC5
+*NODE:141:SW
+	1CE7: 62 D0 05 MOV   REG[0xD0],0x5
+    1CEA: 51 50    MOV   A,[k+1]
+    1CEC: 08       PUSH  A
+    1CED: 51 4F    MOV   A,[k]
+    1CEF: 62 D0 05 MOV   REG[0xD0],0x5
+    1CF2: 53 2E    MOV   [__r0],A
+    1CF4: 18       POP   A
+    1CF5: 53 2D    MOV   [__r1],A
+    1CF7: 65 2D    ASL   [__r1]
+    1CF9: 6B 2E    RLC   [__r0]
+    1CFB: 65 2D    ASL   [__r1]
+    1CFD: 6B 2E    RLC   [__r0]
+    1CFF: 06 2D 23 ADD   [__r1],0x23
+    1D02: 0E 2E 00 ADC   [__r0],0x0
+    1D05: 51 2E    MOV   A,[__r0]
+*NODE:142:SW
+	1D07: 60 D4    MOV   REG[0xD4],A
+    1D09: 3E 2D    MVI   A,[__r1]
+    1D0B: 53 2A    MOV   [__r4],A
+    1D0D: 3E 2D    MVI   A,[__r1]
+    1D0F: 53 29    MOV   [__r5],A
+    1D11: 3E 2D    MVI   A,[__r1]
+    1D13: 53 28    MOV   [__r6],A
+    1D15: 3E 2D    MVI   A,[__r1]
+    1D17: 53 27    MOV   [__r7],A
+*NODE:143:SW
+	1D19: 62 D0 05 MOV   REG[0xD0],0x5
+    1D1C: 51 50    MOV   A,[k+1]
+    1D1E: 08       PUSH  A
+    1D1F: 51 4F    MOV   A,[k]
+    1D21: 62 D0 05 MOV   REG[0xD0],0x5
+    1D24: 53 2E    MOV   [__r0],A
+    1D26: 18       POP   A
+    1D27: 53 2D    MOV   [__r1],A
+    1D29: 65 2D    ASL   [__r1]
+    1D2B: 6B 2E    RLC   [__r0]
+    1D2D: 65 2D    ASL   [__r1]
+    1D2F: 6B 2E    RLC   [__r0]
+    1D31: 65 2D    ASL   [__r1]
+    1D33: 6B 2E    RLC   [__r0]
+    1D35: 06 2D 00 ADD   [__r1],0x0
+    1D38: 0E 2E 02 ADC   [__r0],0x2
+    1D3B: 51 2E    MOV   A,[__r0]
+*NODE:144:SW
+	1D3D: 60 D5    MOV   REG[0xD5],A
+    1D3F: 51 2A    MOV   A,[__r4]
+    1D41: 3F 2D    MVI   [__r1],A
+    1D43: 51 29    MOV   A,[__r5]
+    1D45: 3F 2D    MVI   [__r1],A
+    1D47: 51 28    MOV   A,[__r6]
+    1D49: 3F 2D    MVI   [__r1],A
+    1D4B: 51 27    MOV   A,[__r7]
+    1D4D: 3F 2D    MVI   [__r1],A
+*NODE:145:SW
+	1D4F: 62 D0 05 MOV   REG[0xD0],0x5
+    1D52: 51 50    MOV   A,[k+1]
+    1D54: 08       PUSH  A
+    1D55: 51 4F    MOV   A,[k]
+    1D57: 62 D0 05 MOV   REG[0xD0],0x5
+    1D5A: 53 2E    MOV   [__r0],A
+    1D5C: 18       POP   A
+    1D5D: 53 2D    MOV   [__r1],A
+    1D5F: 65 2D    ASL   [__r1]
+    1D61: 6B 2E    RLC   [__r0]
+    1D63: 65 2D    ASL   [__r1]
+    1D65: 6B 2E    RLC   [__r0]
+    1D67: 06 2D 03 ADD   [__r1],0x3
+    1D6A: 0E 2E 00 ADC   [__r0],0x0
+    1D6D: 51 2E    MOV   A,[__r0]
+*NODE:146:SW
+	1D6F: 60 D4    MOV   REG[0xD4],A
+    1D71: 3E 2D    MVI   A,[__r1]
+    1D73: 53 2A    MOV   [__r4],A
+    1D75: 3E 2D    MVI   A,[__r1]
+    1D77: 53 29    MOV   [__r5],A
+    1D79: 3E 2D    MVI   A,[__r1]
+    1D7B: 53 28    MOV   [__r6],A
+    1D7D: 3E 2D    MVI   A,[__r1]
+    1D7F: 53 27    MOV   [__r7],A
+*NODE:147:SW
+	 1D81: 62 D0 05 MOV   REG[0xD0],0x5
+    1D84: 51 50    MOV   A,[k+1]
+    1D86: 08       PUSH  A
+    1D87: 51 4F    MOV   A,[k]
+    1D89: 62 D0 05 MOV   REG[0xD0],0x5
+    1D8C: 53 2E    MOV   [__r0],A
+    1D8E: 18       POP   A
+    1D8F: 53 2D    MOV   [__r1],A
+    1D91: 65 2D    ASL   [__r1]
+    1D93: 6B 2E    RLC   [__r0]
+    1D95: 06 2D 01 ADD   [__r1],0x1
+    1D98: 0E 2E 00 ADC   [__r0],0x0
+    1D9B: 65 2D    ASL   [__r1]
+    1D9D: 6B 2E    RLC   [__r0]
+    1D9F: 65 2D    ASL   [__r1]
+    1DA1: 6B 2E    RLC   [__r0]
+    1DA3: 06 2D 00 ADD   [__r1],0x0
+    1DA6: 0E 2E 02 ADC   [__r0],0x2
+    1DA9: 51 2E    MOV   A,[__r0]
+*NODE:148:SW
+	1DAB: 60 D5    MOV   REG[0xD5],A
+    1DAD: 51 2A    MOV   A,[__r4]
+    1DAF: 3F 2D    MVI   [__r1],A
+    1DB1: 51 29    MOV   A,[__r5]
+    1DB3: 3F 2D    MVI   [__r1],A
+    1DB5: 51 28    MOV   A,[__r6]
+    1DB7: 3F 2D    MVI   [__r1],A
+    1DB9: 51 27    MOV   A,[__r7]
+    1DBB: 3F 2D    MVI   [__r1],A
+*NODE:149:SW
+	1DBD: 62 D0 05 MOV   REG[0xD0],0x5
+    1DC0: 76 50    INC   [k+1]
+    1DC2: 0E 4F 00 ADC   [k],0x0
+    1DC5: 62 D0 05 MOV   REG[0xD0],0x5
+    1DC8: 51 50    MOV   A,[k+1]
+    1DCA: 11 08    SUB   A,0x8
+    1DCC: 51 4F    MOV   A,[k]
+    1DCE: 19 00    SBB   A,0x0
+    1DD0: CF 16    JC    0x1CE7
+*NODE:150:SW
+	1DD2: 62 D0 05 MOV   REG[0xD0],0x5
+    1DD5: 51 48    MOV   A,[z+1]
+    1DD7: 01 C0    ADD   A,0xC0
+    1DD9: 62 D0 05 MOV   REG[0xD0],0x5
+    1DDC: 53 2D    MOV   [__r1],A
+    1DDE: 62 D0 05 MOV   REG[0xD0],0x5
+    1DE1: 51 47    MOV   A,[z]
+    1DE3: 09 01    ADC   A,0x1
+    1DE5: 62 D0 05 MOV   REG[0xD0],0x5
+    1DE8: 53 2E    MOV   [__r0],A
+    1DEA: 51 2D    MOV   A,[__r1]
+    1DEC: 08       PUSH  A
+    1DED: 51 2E    MOV   A,[__r0]
+    1DEF: 62 D0 05 MOV   REG[0xD0],0x5
+    1DF2: 53 2F    MOV   [FlashParams],A
+    1DF4: 18       POP   A
+    1DF5: 53 30    MOV   [FlashParams+1],A
+*NODE:151:SW
+	1DF7: 55 32 00 MOV   [FlashParams+3],0x0
+    1DFA: 55 31 02 MOV   [FlashParams+2],0x2
+*NODE:152:SW
+	1DFD: 55 33 19 MOV   [FlashParams+4],0x19
+*NODE:153:SW
+	1E00: 10       PUSH  X
+    1E01: 50 05    MOV   A,0x5
+    1E03: 08       PUSH  A
+    1E04: 50 2F    MOV   A,0x2F
+    1E06: 5C       MOV   X,A
+    1E07: 18       POP   A
+    1E08: 7C 06 16 LCALL _bFlashWriteBlock
+    1E0B: 20       POP   X
+    1E0C: 54 00    MOV   [X+0],A
+*NODE:154:SW
+	1E0E: 62 D0 05 MOV   REG[0xD0],0x5
+    1E11: 51 48    MOV   A,[z+1]
+    1E13: 01 E0    ADD   A,0xE0
+    1E15: 62 D0 05 MOV   REG[0xD0],0x5
+    1E18: 53 2D    MOV   [__r1],A
+    1E1A: 62 D0 05 MOV   REG[0xD0],0x5
+    1E1D: 51 47    MOV   A,[z]
+    1E1F: 09 01    ADC   A,0x1
+    1E21: 62 D0 05 MOV   REG[0xD0],0x5
+    1E24: 53 2E    MOV   [__r0],A
+    1E26: 51 2D    MOV   A,[__r1]
+    1E28: 08       PUSH  A
+    1E29: 51 2E    MOV   A,[__r0]
+    1E2B: 62 D0 05 MOV   REG[0xD0],0x5
+    1E2E: 53 2F    MOV   [FlashParams],A
+    1E30: 18       POP   A
+    1E31: 53 30    MOV   [FlashParams+1],A
+*NODE:155:SW
+	1E33: 55 32 63 MOV   [FlashParams+3],0x63
+    1E36: 55 31 00 MOV   [FlashParams+2],0x0
+*NODE:156:SW
+	1E39: 55 33 19 MOV   [FlashParams+4],0x19
+*NODE:157:SW
+	1E3C: 10       PUSH  X
+    1E3D: 50 05    MOV   A,0x5
+    1E3F: 08       PUSH  A
+    1E40: 50 2F    MOV   A,0x2F
+    1E42: 5C       MOV   X,A
+    1E43: 18       POP   A
+    1E44: 7C 06 16 LCALL _bFlashWriteBlock
+    1E47: 20       POP   X
+    1E48: 54 00    MOV   [X+0],A
+*NODE:158:SW
+	1E4A: 3D 00 00 CMP   [X+0],0x0
+    1E4D: A0 40    JZ    0x1E8E
+*NODE:159:SW
+	1E4F: 71 01    OR    F,0x1
+*NODE:160:SW
+	1E51: 62 D0 05 MOV   REG[0xD0],0x5
+    1E54: 51 48    MOV   A,[z+1]
+    1E56: 01 C0    ADD   A,0xC0
+    1E58: 62 D0 05 MOV   REG[0xD0],0x5
+    1E5B: 53 2D    MOV   [__r1],A
+    1E5D: 62 D0 05 MOV   REG[0xD0],0x5
+    1E60: 51 47    MOV   A,[z]
+    1E62: 09 01    ADC   A,0x1
+    1E64: 62 D0 05 MOV   REG[0xD0],0x5
+    1E67: 53 2E    MOV   [__r0],A
+    1E69: 51 2D    MOV   A,[__r1]
+    1E6B: 08       PUSH  A
+    1E6C: 51 2E    MOV   A,[__r0]
+    1E6E: 62 D0 05 MOV   REG[0xD0],0x5
+    1E71: 53 2F    MOV   [FlashParams],A
+    1E73: 18       POP   A
+    1E74: 53 30    MOV   [FlashParams+1],A
+*NODE:161:SW
+	1E76: 55 32 00 MOV   [FlashParams+3],0x0
+    1E79: 55 31 03 MOV   [FlashParams+2],0x3
+*NODE:162:SW
+	 1E7C: 55 34 40 MOV   [FlashParams+5],0x40
+    1E7F: 55 33 00 MOV   [FlashParams+4],0x0
+*NODE:163:SW
+	1E82: 10       PUSH  X
+    1E83: 50 05    MOV   A,0x5
+    1E85: 08       PUSH  A
+    1E86: 50 2F    MOV   A,0x2F
+    1E88: 5C       MOV   X,A
+    1E89: 18       POP   A
+    1E8A: 7C 07 BC LCALL _FlashReadBlock
+    1E8D: 20       POP   X
+*NODE:164:SW
+	1E8E: 3D 00 00 CMP   [X+0],0x0
+    1E91: A0 40    JZ    0x1ED2
+*NODE:165:SW
+	1E93: 71 01    OR    F,0x1
+*NODE:166:SW
+	1E95: 62 D0 05 MOV   REG[0xD0],0x5
+    1E98: 51 48    MOV   A,[z+1]
+    1E9A: 01 E0    ADD   A,0xE0
+    1E9C: 62 D0 05 MOV   REG[0xD0],0x5
+    1E9F: 53 2D    MOV   [__r1],A
+    1EA1: 62 D0 05 MOV   REG[0xD0],0x5
+    1EA4: 51 47    MOV   A,[z]
+    1EA6: 09 01    ADC   A,0x1
+    1EA8: 62 D0 05 MOV   REG[0xD0],0x5
+    1EAB: 53 2E    MOV   [__r0],A
+    1EAD: 51 2D    MOV   A,[__r1]
+    1EAF: 08       PUSH  A
+    1EB0: 51 2E    MOV   A,[__r0]
+    1EB2: 62 D0 05 MOV   REG[0xD0],0x5
+    1EB5: 53 2F    MOV   [FlashParams],A
+    1EB7: 18       POP   A
+    1EB8: 53 30    MOV   [FlashParams+1],A
+*NODE:167:SW
+	1EBA: 55 32 00 MOV   [FlashParams+3],0x0
+    1EBD: 55 31 05 MOV   [FlashParams+2],0x5
+*NODE:168:SW
+	1EC0: 55 34 40 MOV   [FlashParams+5],0x40
+    1EC3: 55 33 00 MOV   [FlashParams+4],0x0
+*NODE:169:SW
+	1EC6: 10       PUSH  X
+    1EC7: 50 05    MOV   A,0x5
+    1EC9: 08       PUSH  A
+    1ECA: 50 2F    MOV   A,0x2F
+    1ECC: 5C       MOV   X,A
+    1ECD: 18       POP   A
+    1ECE: 7C 07 BC LCALL _FlashReadBlock
+    1ED1: 20       POP   X
+*NODE:170:SW
+	1ED2: 62 D0 05 MOV   REG[0xD0],0x5
+    1ED5: 55 50 00 MOV   [k+1],0x0
+    1ED8: 55 4F 00 MOV   [k],0x0
+    1EDB: 80 DF    JMP   0x1FBB
+*NODE:171:SW
+	1EDD: 62 D0 05 MOV   REG[0xD0],0x5
+    1EE0: 51 50    MOV   A,[k+1]
+    1EE2: 08       PUSH  A
+    1EE3: 51 4F    MOV   A,[k]
+    1EE5: 62 D0 05 MOV   REG[0xD0],0x5
+    1EE8: 53 2E    MOV   [__r0],A
+    1EEA: 18       POP   A
+    1EEB: 53 2D    MOV   [__r1],A
+    1EED: 65 2D    ASL   [__r1]
+    1EEF: 6B 2E    RLC   [__r0]
+    1EF1: 65 2D    ASL   [__r1]
+    1EF3: 6B 2E    RLC   [__r0]
+    1EF5: 65 2D    ASL   [__r1]
+    1EF7: 6B 2E    RLC   [__r0]
+    1EF9: 06 2D 00 ADD   [__r1],0x0
+    1EFC: 0E 2E 03 ADC   [__r0],0x3
+    1EFF: 51 2E    MOV   A,[__r0]
+*NODE:172:SW
+	1F01: 60 D4    MOV   REG[0xD4],A
+    1F03: 3E 2D    MVI   A,[__r1]
+    1F05: 53 2A    MOV   [__r4],A
+    1F07: 3E 2D    MVI   A,[__r1]
+    1F09: 53 29    MOV   [__r5],A
+    1F0B: 3E 2D    MVI   A,[__r1]
+    1F0D: 53 28    MOV   [__r6],A
+    1F0F: 3E 2D    MVI   A,[__r1]
+    1F11: 53 27    MOV   [__r7],A
+*NODE:173:SW
+	1F13: 62 D0 05 MOV   REG[0xD0],0x5
+    1F16: 51 50    MOV   A,[k+1]
+    1F18: 08       PUSH  A
+    1F19: 51 4F    MOV   A,[k]
+    1F1B: 62 D0 05 MOV   REG[0xD0],0x5
+    1F1E: 53 2E    MOV   [__r0],A
+    1F20: 18       POP   A
+    1F21: 53 2D    MOV   [__r1],A
+    1F23: 65 2D    ASL   [__r1]
+    1F25: 6B 2E    RLC   [__r0]
+    1F27: 65 2D    ASL   [__r1]
+    1F29: 6B 2E    RLC   [__r0]
+    1F2B: 06 2D C3 ADD   [__r1],0xC3
+    1F2E: 0E 2E 00 ADC   [__r0],0x0
+    1F31: 51 2E    MOV   A,[__r0]
+*NODE:174:SW
+	1F33: 60 D5    MOV   REG[0xD5],A
+    1F35: 51 2A    MOV   A,[__r4]
+    1F37: 3F 2D    MVI   [__r1],A
+    1F39: 51 29    MOV   A,[__r5]
+    1F3B: 3F 2D    MVI   [__r1],A
+    1F3D: 51 28    MOV   A,[__r6]
+    1F3F: 3F 2D    MVI   [__r1],A
+    1F41: 51 27    MOV   A,[__r7]
+    1F43: 3F 2D    MVI   [__r1],A
+*NODE:175:SW
+	1F45: 62 D0 05 MOV   REG[0xD0],0x5
+    1F48: 51 50    MOV   A,[k+1]
+    1F4A: 08       PUSH  A
+    1F4B: 51 4F    MOV   A,[k]
+    1F4D: 62 D0 05 MOV   REG[0xD0],0x5
+    1F50: 53 2E    MOV   [__r0],A
+    1F52: 18       POP   A
+    1F53: 53 2D    MOV   [__r1],A
+    1F55: 65 2D    ASL   [__r1]
+    1F57: 6B 2E    RLC   [__r0]
+    1F59: 06 2D 01 ADD   [__r1],0x1
+    1F5C: 0E 2E 00 ADC   [__r0],0x0
+    1F5F: 65 2D    ASL   [__r1]
+    1F61: 6B 2E    RLC   [__r0]
+    1F63: 65 2D    ASL   [__r1]
+    1F65: 6B 2E    RLC   [__r0]
+    1F67: 06 2D 00 ADD   [__r1],0x0
+    1F6A: 0E 2E 03 ADC   [__r0],0x3
+    1F6D: 51 2E    MOV   A,[__r0]
+*NODE:176:SW
+	1F6F: 60 D4    MOV   REG[0xD4],A
+    1F71: 3E 2D    MVI   A,[__r1]
+    1F73: 53 2A    MOV   [__r4],A
+    1F75: 3E 2D    MVI   A,[__r1]
+    1F77: 53 29    MOV   [__r5],A
+    1F79: 3E 2D    MVI   A,[__r1]
+    1F7B: 53 28    MOV   [__r6],A
+    1F7D: 3E 2D    MVI   A,[__r1]
+    1F7F: 53 27    MOV   [__r7],A
+*NODE:177:SW
+	1F81: 62 D0 05 MOV   REG[0xD0],0x5
+    1F84: 51 50    MOV   A,[k+1]
+    1F86: 08       PUSH  A
+    1F87: 51 4F    MOV   A,[k]
+    1F89: 62 D0 05 MOV   REG[0xD0],0x5
+    1F8C: 53 2E    MOV   [__r0],A
+    1F8E: 18       POP   A
+    1F8F: 53 2D    MOV   [__r1],A
+    1F91: 65 2D    ASL   [__r1]
+    1F93: 6B 2E    RLC   [__r0]
+    1F95: 65 2D    ASL   [__r1]
+    1F97: 6B 2E    RLC   [__r0]
+    1F99: 06 2D 43 ADD   [__r1],0x43
+    1F9C: 0E 2E 00 ADC   [__r0],0x0
+    1F9F: 51 2E    MOV   A,[__r0]
+*NODE:178:SW
+	1FA1: 60 D5    MOV   REG[0xD5],A
+    1FA3: 51 2A    MOV   A,[__r4]
+    1FA5: 3F 2D    MVI   [__r1],A
+    1FA7: 51 29    MOV   A,[__r5]
+    1FA9: 3F 2D    MVI   [__r1],A
+    1FAB: 51 28    MOV   A,[__r6]
+    1FAD: 3F 2D    MVI   [__r1],A
+    1FAF: 51 27    MOV   A,[__r7]
+    1FB1: 3F 2D    MVI   [__r1],A
+*NODE:179:SW
+	1FB3: 62 D0 05 MOV   REG[0xD0],0x5
+    1FB6: 76 50    INC   [k+1]
+    1FB8: 0E 4F 00 ADC   [k],0x0
+    1FBB: 62 D0 05 MOV   REG[0xD0],0x5
+    1FBE: 51 50    MOV   A,[k+1]
+    1FC0: 11 08    SUB   A,0x8
+    1FC2: 51 4F    MOV   A,[k]
+    1FC4: 19 00    SBB   A,0x0
+    1FC6: CF 16    JC    0x1EDD
+*NODE:180:SW
+	1FC8: 10       PUSH  X
+    1FC9: 57 00    MOV   X,0x0
+    1FCB: 50 01    MOV   A,0x1
+    1FCD: 7C 05 0B LCALL _LCD_1_Position
+    1FD0: 20       POP   X
+*NODE:181:SW
+	1FD1: 50 05    MOV   A,0x5
+    1FD3: 08       PUSH  A
+    1FD4: 50 45    MOV   A,0x45
+    1FD6: 08       PUSH  A
+    1FD7: 62 D0 00 MOV   REG[0xD0],0x0
+    1FDA: 51 D7    MOV   A,[final_data_re+20]
+    1FDC: 08       PUSH  A
+    1FDD: 51 D8    MOV   A,[final_data_re+21]
+    1FDF: 08       PUSH  A
+    1FE0: 51 D9    MOV   A,[final_data_re+22]
+    1FE2: 08       PUSH  A
+    1FE3: 51 DA    MOV   A,[final_data_re+23]
+    1FE5: 08       PUSH  A
+    1FE6: 7C 28 B6 LCALL _ftoa
+*NODE:182:SW
+	1FE9: 38 FA    ADD   SP,0xFA
+    1FEB: 62 D0 05 MOV   REG[0xD0],0x5
+    1FEE: 51 2D    MOV   A,[__r1]
+    1FF0: 08       PUSH  A
+    1FF1: 51 2E    MOV   A,[__r0]
+    1FF3: 62 D0 05 MOV   REG[0xD0],0x5
+    1FF6: 53 3F    MOV   [data_read],A
+    1FF8: 18       POP   A
+    1FF9: 53 40    MOV   [data_read+1],A
+*NODE:183:SW
+	1FFB: 10       PUSH  X
+    1FFC: 51 3F    MOV   A,[data_read]
+    1FFE: 08       PUSH  A
+    1FFF: 51 40    MOV   A,[data_read+1]
+    2001: 5C       MOV   X,A
+    2002: 18       POP   A
+    2003: 7C 03 C2 LCALL _LCD_1_PrString
+    2006: 20       POP   X
+*NODE:184:SW
+	2007: 62 D0 05 MOV   REG[0xD0],0x5
+    200A: 76 48    INC   [z+1]
+    200C: 0E 47 00 ADC   [z],0x0
+    200F: 51 48    MOV   A,[z+1]
