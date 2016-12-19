@@ -17,7 +17,8 @@ struct NodeInfo
 	int NodeNum;
 	int CL_Software;
 	int CL_Hardware;
-	int CI_Flash;		
+	int CI_Flash;	
+	int CI_Mac;	
 	vector<int> NodeEdges;
 };
 
@@ -41,7 +42,7 @@ void GetData()
 {
 	string line;
 	ifstream f;
-	f.open("test.txt", ios::in);
+	f.open("final_process_node_node_values_good.txt", ios::in);
 	f.seekg(0);
 	getline(f, line);
 	string::size_type sz;	
@@ -61,6 +62,8 @@ void GetData()
 		Curr_Solution[i].CL_Hardware = stoi(word, &sz);
 		iss>>word;
 		Curr_Solution[i].CI_Flash = stoi(word, &sz);
+		iss>>word;
+		Curr_Solution[i].CI_Mac = stoi(word, &sz);
 		while(iss>>word)
 		{
 			int edges;
@@ -80,6 +83,7 @@ void displayOutput(int lines)
 		cout << " CL_Software:" << Curr_Solution[i].CL_Software<<endl;
 		cout << " CL_Hardware:" << Curr_Solution[i].CL_Hardware<<endl;
 		cout << " CI_Flash :" << Curr_Solution[i].CI_Flash<<endl;
+		cout << " CI_Mac :" << Curr_Solution[i].CI_Mac<<endl;
 		cout << " NodeEdges:";
 		for(int k=0;k<Curr_Solution[i].NodeEdges.size();k++)
 		{
@@ -91,34 +95,44 @@ void displayOutput(int lines)
 
 int CalculateCostFunct(int lines)
 {
-    float Q1 = 0.1, Q2 = 0.1, Q3 = 1;
-    int wd_mac = 8, ci_mac = 4;
-    int wd_flash = 512, ci_flash = 1, flash_lim = 1;
+    float Q1 = 1, Q2 = 0.01, Q3 = 1;
+    int wd_mac = 8, ci_mac = 4, mac_lim=0;
+    int wd_flash = 512, ci_flash = 1, flash_lim = 0;
     int k = 0, j = 0, l = 0, m=0, n=0;
-    int total_mac = 0, total_flash = 0;
-    int cost = 0;
+    float total_mac = 0, total_flash = 0;
+    long long cost = 0;
     int CL_Hardware_sum = 0, CL_Software_sum = 0;
 
     //mac
     //lines has to change here
     //1/mac has to be verrified 
-    for (k = 0; k < lines; k++) {
-        total_mac += wd_mac * (1/ci_mac);
-        //cout << total_mac << endl; //debug
-    }
-
-    //loop used to obtain flash sum limit
+    
     for (n = 0; n < lines; n++) {
-        if (Curr_Solution[n].CI_Flash != 0) {
-            flash_lim++;
+        if (Curr_Solution[n].CI_Mac != 0) {
+            mac_lim++;
         }
     }
-
-    //flash
-    for (j = 0; j < flash_lim; j++) {
-        total_flash += wd_flash * Curr_Solution[j].CI_Flash;
-        //cout << total_flash << endl; //debug
+  
+//   cout<<"mac_lim: "<<mac_lim<<endl; //Debug
+    
+    for (k = 0; k < mac_lim; k++) {
+    	
+        	total_mac += wd_mac / ci_mac;
     }
+        
+//    cout <<"total_mac: "<< total_mac << endl; //debug
+
+
+    
+	
+    //flash
+    for (j = 0; j < lines; j++) {
+        total_flash += wd_flash * Curr_Solution[j].CI_Flash;
+  //      cout<<"CI_Flash: "<<Curr_Solution[j].CI_Flash<<endl;
+    }
+    
+//    cout << "total_flash : "<<total_flash << endl; //debug
+  
     int hw_loop_limit = hardware_nodes.size();
     int sw_loop_limit = software_nodes.size();
     //HW nodes
@@ -126,12 +140,30 @@ int CalculateCostFunct(int lines)
         CL_Hardware_sum += Curr_Solution[hardware_nodes[l]].CL_Hardware;
         //cout << " CL_Hardware_sumALEX:" << CL_Hardware_sum << endl; //debug
     }
+    
+    if (hw_loop_limit != 0)		
+    {		
+        CL_Hardware_sum = CL_Hardware_sum / hw_loop_limit;		
+    }
+    
+ //   cout<<"CL_Hardware_sum: "<<CL_Hardware_sum<<endl;
 
     //SW nodes
+  //  cout<<"sw_loop_limit: "<<sw_loop_limit<<endl;//Debug
+  
     for (m = 0; m < sw_loop_limit; m++) {
         CL_Software_sum += Curr_Solution[software_nodes[m]].CL_Software;
-        //cout << " CL_Software_sumALEX:" << CL_Software_sum << endl; //debug
+        
     }
+    
+  //  cout << " CL_Software_sumALEX:" << CL_Software_sum << endl; //debug
+    
+    
+    if (sw_loop_limit != 0)		
+    {		
+        CL_Software_sum = CL_Software_sum / sw_loop_limit;		
+    }
+    
     /*
     cout << " total_mac" << total_mac << endl; //debug
     cout << " flash_lim" << flash_lim << endl; //debug
@@ -141,7 +173,7 @@ int CalculateCostFunct(int lines)
     */
 
     //cost = /*(Q1 * total_mac) + (Q1 * total_flash) */- (Q3 * (CL_Hardware_sum - CL_Software_sum));//debug
-    cost = (Q1 * total_mac) + (Q1 * total_flash) - (Q3 * (CL_Hardware_sum - CL_Software_sum));
+    cost = (Q1 * total_mac) + (Q2 * total_flash) - (Q3 * (CL_Hardware_sum - CL_Software_sum));
 
 //    cout <<endl<< "COST:" << cost; //debug
                                         //cost = total_mac;
