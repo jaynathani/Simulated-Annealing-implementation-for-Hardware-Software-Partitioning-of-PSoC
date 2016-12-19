@@ -8,7 +8,7 @@
 
 using namespace std;
 
-float ti = 400;		//Step 2
+float ti = 1000;		//Step 2
 float tl = 90;
 float alpha = 0.96;
 	
@@ -20,6 +20,18 @@ void SA_Algorithm()
 	float t=ti;
 	vector<int>::iterator it;
 	curr_cost = CalculateCostFunct(lines);
+	worst_cost = curr_cost;
+	cout<<endl<<"Worst cost: "<<worst_cost<<endl;
+	for(int i=0;i<software_nodes.size();i++)		//Printing out
+		{
+			cout<<software_nodes[i]<<" ";
+		}	
+		cout<<endl<<endl;
+		cout<<"Hardware node: ";
+		for(int i=0;i<hardware_nodes.size();i++)
+		{
+			cout<<hardware_nodes[i]<<" ";
+		}
 	best_cost = curr_cost;
 	worst_cost = curr_cost;
 	float q, equ;
@@ -34,7 +46,7 @@ void SA_Algorithm()
 		{
 			software_nodes.push_back(random_number);
 			hardware_nodes.erase(remove(hardware_nodes.begin(), hardware_nodes.end(), random_number), hardware_nodes.end());
-			flag = 1;		//
+			flag = 1;		
 		}
 		else
 		{
@@ -43,7 +55,8 @@ void SA_Algorithm()
 		}
 		
 		new_cost = CalculateCostFunct(lines);
-		//cout<<"New cost: "<<new_cost<<"\n\n"; //Debug
+	//	cout<<"\n\nNew cost: "<<new_cost<<"\n"; //Debug
+		cout<<endl<<new_cost;
 		cost_difference = new_cost - curr_cost;		//Inner step 3.1.2
 		if(new_cost < best_cost)
 			{
@@ -83,29 +96,34 @@ void SA_Algorithm()
 		else
 			curr_cost = new_cost;
 		
-		//Print out every iteration of Hardware-Software vectors
-	//	cout<<"\n\nNode change: "<<random_number<<"\n\n"; 
-/*		for(int i=0;i<software_nodes.size();i++)		//Printing out
+		//Print out every iteration of Hardware-Software vectors//Debug
+	//	cout<<"\n\nNode change: "<<random_number<<"\n\n";
+	/*	cout<<"Software node: "; 
+		for(int i=0;i<software_nodes.size();i++)		//Printing out
 		{
-			cout<<"Software node: "<<software_nodes[i]<<endl;
+			cout<<software_nodes[i]<<" ";				//Debug
 		}	
-		cout<<endl;
+		cout<<endl<<endl;
+		cout<<"Hardware node: ";
 		for(int i=0;i<hardware_nodes.size();i++)
 		{
-			cout<<"Hardware node: "<<hardware_nodes[i]<<endl;
+			cout<<hardware_nodes[i]<<" ";
 		}*/
 		t = alpha * t;		//Step 3.2
 		
 	}
-	cout<<endl<<"Best cost: "<<best_cost<<endl;
+	cout<<endl<<endl<<"Best cost: "<<best_cost<<endl;
+/*	cout<<"Software nodes: ";
 	for(int i=0;i<best_software_nodes.size();i++)		//Printing out
 		{
-			cout<<"Software node: "<<best_software_nodes[i]<<endl;
+			cout<<best_software_nodes[i]<<" ";			//Debug
 		}	
-		cout<<endl;
+		cout<<endl<<endl;
+		cout<<"Hardware node: ";
 		for(int i=0;i<best_hardware_nodes.size();i++)
 		{
-			cout<<"Hardware node: "<<best_hardware_nodes[i]<<endl;
+			cout<<best_hardware_nodes[i]<<" ";
 		}
-	cout<<endl<<"Worst cost: "<<worst_cost<<endl;
+		cout<<"\n\n";*/
+//	cout<<endl<<"Worst cost: "<<worst_cost<<endl;
 }
